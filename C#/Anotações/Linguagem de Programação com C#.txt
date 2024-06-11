@@ -38,3 +38,42 @@
 - Não utilize caracteres especiais ou espaços.
 - Não comece com números.
 - É comum vermos constantes todas em maiúscula, separadas por "_", mas não é via de regra.
+
+# Nomes Reservados ou Key Words
+- São palavras de uso exclusivo do C#.
+- Não podemos utilizar como nomes de variáveis ou constantes.
+
+# Comentários
+- Comentários são extremamente úteis e necessários para auxiliar na expressividade do código de tal forma a ajudar e muito para quando outras pessoas forem mexer no código, poderem compreender ainda melhor o que está sendo executado em determinada parte do código. Isso facilita e muito a compreensão do código como um todo.
+- Não é executada pelo programa.
+- Podemos utilizar em linhas que não desejamos executar.
+- Podemos ter comentários de uma linha, múltiplas linhas e XML (Metadata).
+- Exemplos:
+	// Uma linha
+	/*
+		multiplas linhas
+	*/
+	/// XML
+
+# Tipos Primitivos ou Built-in-Types
+- São tipos base cujo outros tipos (complexos) irão derivar.
+- Definir o tipo correto otimiza a execução do programa.
+- São chamados de Tipo de Valor.
+- Armazenam o valor e não a referência para um item na memória.
+- São classificados em:
+	- Tipos Simples (Simple Types)
+	- Enumerables (Enums)
+	- Estruturas (Structs)
+	- Tipos Nulos (Nullable Types)
+- Cada tipo possui uma capacidade, caso essa capacidade exceda, o programa gera um erro.
+- Esta capacidade pré-definida ajuda a otimização do seu programa.
+
+
+# System
+- No .NET tudo começa de um tipo base chamado SYSTEM. Todo e qualquer tipo, seja built-in ou complexo deriva dele. Ele é a base de todos os objetos no .NET. Não precisamos nos preocupar em usá-lo ou qualquer coisa similar, seu uso já é implicito.
+
+# Byte
+- O tipo byte é utilizado para representar um byte de fato. Em diversos casos, precisamos da cadeia de bytes de um arquivo por exemplo, também é chamado de byte array.
+Também temos o sbyte que permite valores negativos.
+- Byte (8-bit) vai de 0 até 255.
+- SByte (8-bit) vai de -128 a 127.
