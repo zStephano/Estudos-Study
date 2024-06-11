@@ -1,0 +1,9 @@
+## Notas Importantes:
+-Não utilize espaços nem caracteres especiais na criação do programa:
+	Bons: MeuApp, Pedidos, MinhaApp
+	Ruins:"MeuApp, $App, App#Teste
+-Tente utilizar caminhos curtos e sem caracteres especiais:
+	Bons:C:\dev, C:\apps
+	Ruins:C:\Caminho com Espaços e Caracteres Especiais\Meu App
+-Evite caminhos de rede, sempre opte por C:\
+-O C# é Case Sensitive, ou seja, ele sabe diferenciais letras maiúsculas de minúsculas, exemplo: Teste é diferente de teste. 

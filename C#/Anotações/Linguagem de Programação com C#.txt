@@ -1,0 +1,40 @@
+## Linguagem de Programação com C#
+
+# Namespace
+- Enquanto as pastas são as divisões físicas, os namespaces são as divisões lógicas de um projeto.  Assim como não podemos ter dois arquivos com o mesmo nome nas pastas, não podemos ter duas classes com o mesmo nome em um namespace.
+- O ideal é ter apenas um namespace e uma classe por arquivo.
+- O escopo de um namespace é definido entre CHAVES assim como classes e métodos.
+- Um namespace pode ser reutilizado podendo estar presente em diversos arquivos.
+- É possível criar quantos namespaces quisermos. Os namespaces não devem conter espaços ou caracteres especiais.
+- Toda palavra do namespace começa com letra maiúscula.
+- Podemos ter um namespace dentro de outro usando o "." como separador.
+- Durante a execução, todos os arquivos do C# serão unificados, assim, a divisão física se perderá. Sobrará apenas a divisão lógica que são os namespaces.
+
+# Using
+- Importações definem as bibliotecas que nosso programa irá utilizar. Por padrão, só o básico vem incluso.
+- Precisamos importar o que desejamos para poder trabalhar. Isto é feito no começo do programa onde utilizamos a palavra reservada USING para isto.
+- Organizar nosso código em pastas e namespaces é fundamental. Em aplicações grande o volume de código é alto, a quantidade de arquivos é alta e o número de pessoas trabalhando no mesmo projeto também.
+- Entender bem esta organização é fundamental. Use e abuse da criação de arquivos e namespaces.
+
+# Variáveis
+- Uma variável é algo que utilizamos para armazenar uma informação.
+- Ser variável significa que seu valor pode ser alterado a qualquer momento, ou seja, ele pode variar.
+- Sempre que criamos uma variável, dizimos que estamos iniciliazando/instanciando ela.
+- Podemos usar um TIPO ou palavra reservada VAR para cirar uma variável.
+- No C# o tipo vem sempre antes do nome da variável, podemos informar um valor já na criação da variável. Se não informado, o valor padrão será aplicado.
+- Utilize nomes coesos com o que a variável representa, seja mais específico, isso facilita a expressividade do código.
+- Não utilize caracteres especiais ou espaços.
+- Não comece com números.
+- A primeira letra de cada variável é SEMPRE minúscula.
+
+# Constantes
+- A diferença de variável e a constante é que a constante tem o tipo e valor dela definido e fixo, ou seja, não pode ser alterada no decorrer da execução do código.
+- Uma vez criadas, somos obrigados a atribuir um valor.
+- Não funcionam com a utilização de VAR, mas sim CONST.
+- São mais otimizadas que as variáveis.
+- Recomendadas para usos frequentes quando não houver variação nas suas informações.
+- Caso não seja informado um valor, o valor padrão será atribuído.
+- Utilize nomes coesos com o que a variável representa, seja mais específico, isso facilita a expressividade do código.
+- Não utilize caracteres especiais ou espaços.
+- Não comece com números.
+- É comum vermos constantes todas em maiúscula, separadas por "_", mas não é via de regra.

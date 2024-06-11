@@ -1,0 +1,6 @@
+## Escopo de um programa
+- É tudo que um programa tem e/ou precisa para ser executado, assim sendo:
+	- Importações: são as referências de bibliotecas, frameworks e nugets que são utilizados pelo projeto;
+	- Namespace: são as divisões lógicas de diretórios do projetos;
+	- Classe: As classes são para leitura e execução da aplicação;
+	- Método Principal: Os métodos definem o que será executado.

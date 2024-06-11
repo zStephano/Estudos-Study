@@ -81,3 +81,10 @@ Possui tudo o que precisamos para criar aplicações;
 Já vem com o Runtime integrado;
 Não devemos utilizar em produção, mas usamos apenas o Runtime;
 É maior que o Runtime, pois já vem com tudo que precisamos.
+
+# Tipos de Projeto
+- Toda vez que utilizamos um projeto do tipo Class Library, o resultado final é uma DLL e não possui interface.
+- O Console Application é uma aplicação executável (.exe) que roda no terminal/console, podendo apenas executar a aplicação ou receber e/ou armazenar dados de forma a interagir com o usuário.
+- Também possui os Projetos Web e Testes:
+	- Projetos WEB: ASP.NET Web, ASP.NET MVC, ASP.NET WebAPI;
+	- Projetos Testes: Microsoft Tests.
