@@ -1,0 +1,25 @@
+## C#:
+Não é a Linguagem de Programação mais fácil;
+Fortemente focada em OOP (Programação Orientada a Objetos);
+É uma linguagem tipada;
+É compilada;
+É de código gerenciado.
+
+#Código Gerenciado:
+Significa que sua execução depende de um gerenciador, normalmente conhecido como Runtime.
+	*No caso do C# este Runtime se chama CLR ou CLR Runtime;
+		*CLR é a sigla para Common Language Runtime ou gerenciador de linguagem comum.
+Gerencia memória, segurança, entre outros recursos básicos.
+
+#Compilação e Gerenciamento:
+A Microsoft possui outras linguagens como VB.Net, F# e até Cobol.NET. Todas elas precisam ser mantidas.
+	*Manutenção de código, correções de bugs, etc;
+Quando o ecossistema de desenvolvimento Microsoft foi criado, ele foi pensado desta forma com um suporte a várias linguagens.
+Se cada linguagem tiver um gerenciador, isso seria muito complicado. Para resolver esse problema, foi criado uma IL - Intermediate Language / Linguagem Intermediária, assim sendo possível ter um compilador pra cada língua, mas de forma inicial, todas elas são traduzidas para essa Linguagem Intermediária, posteriormente, compilada para uso.
+
+#IL - Intermediate Language:
+Embora as compilações sejam diferentes, o gerencialmento é igual para todas, sendo assim, também aplicando-se para alicação de memória, execução de instruções no processador, etc.
+O CLR Recebe um código e compila ele para IL.
+Podemos ter arquivos C# e VB.NET no mesmo projeto mas não no mesmo arquivo.
+O resultado da compilação do IL é sempre o mesmo.
+O processo de conversão do IL ára binário é conhecido como JIT - Just In Time.

@@ -1,0 +1,22 @@
+## Comandos dotnet:
+dotnet restore
+dotnet build
+dotnet clean
+dotnet run
+	dotnet run --enviroment=$SEU_AMBIENTE
+	dotnet run --enviroment=development
+	dotnet run --enviroment=production
+	
+## Comandos - Add package:
+dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL -- Pacote para PostgreSQL
+dotnet add package Microsoft.EntityFrameworkCore.Tools -- Ferramentas adicionais do EFCore
+dotnet add package Microsoft.Extensions.Http
+dotnet add package MudBlazor
+
+## Comandos NEW:
+	dotnet new console => Novo Console Application;
+	dotnet new classlib => Nova Class Library;
+	dotnet new web => Novo projeto ASP.NET Core
+	dotnet new mvc => Novo projeto ASP.NET Core
+	dotnet new webapi => Novo projeto ASP.NET Core
+	dotnet new mstest => Novo projeto Microsoft Test

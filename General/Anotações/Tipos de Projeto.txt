@@ -1,0 +1,10 @@
+## Tipos de Projeto
+Class Library é o resultado final de uma DLL, não possui interface;
+Console Application tme como resultado final uma aplicação que roda no terminal. Pode receber dados, esperar input do usuário, etc.;
+Projeto Web:
+	ASP.NET Web;
+	ASP.NET MVC;
+	ASP.NET WebAPI.
+Projeto Teste:
+	Microsoft Tests;
+	xUnit.
