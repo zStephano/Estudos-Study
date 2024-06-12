@@ -1,0 +1,14 @@
+C:\dev\StudyCase\Study\Study\bin\Debug\net8.0\Study.exe
+C:\dev\StudyCase\Study\Study\bin\Debug\net8.0\Study.deps.json
+C:\dev\StudyCase\Study\Study\bin\Debug\net8.0\Study.runtimeconfig.json
+C:\dev\StudyCase\Study\Study\bin\Debug\net8.0\Study.dll
+C:\dev\StudyCase\Study\Study\bin\Debug\net8.0\Study.pdb
+C:\dev\StudyCase\Study\Study\obj\Debug\net8.0\Study.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\StudyCase\Study\Study\obj\Debug\net8.0\Study.AssemblyInfoInputs.cache
+C:\dev\StudyCase\Study\Study\obj\Debug\net8.0\Study.AssemblyInfo.cs
+C:\dev\StudyCase\Study\Study\obj\Debug\net8.0\Study.csproj.CoreCompileInputs.cache
+C:\dev\StudyCase\Study\Study\obj\Debug\net8.0\Study.dll
+C:\dev\StudyCase\Study\Study\obj\Debug\net8.0\refint\Study.dll
+C:\dev\StudyCase\Study\Study\obj\Debug\net8.0\Study.pdb
+C:\dev\StudyCase\Study\Study\obj\Debug\net8.0\Study.genruntimeconfig.cache
+C:\dev\StudyCase\Study\Study\obj\Debug\net8.0\ref\Study.dll
