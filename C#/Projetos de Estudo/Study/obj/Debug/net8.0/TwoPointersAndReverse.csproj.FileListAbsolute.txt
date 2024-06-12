@@ -1,0 +1,15 @@
+C:\dev\Estudos\C#\Projetos de Estudo\Study\bin\Debug\net8.0\TwoPointersAndReverse.exe
+C:\dev\Estudos\C#\Projetos de Estudo\Study\bin\Debug\net8.0\TwoPointersAndReverse.deps.json
+C:\dev\Estudos\C#\Projetos de Estudo\Study\bin\Debug\net8.0\TwoPointersAndReverse.runtimeconfig.json
+C:\dev\Estudos\C#\Projetos de Estudo\Study\bin\Debug\net8.0\TwoPointersAndReverse.dll
+C:\dev\Estudos\C#\Projetos de Estudo\Study\bin\Debug\net8.0\TwoPointersAndReverse.pdb
+C:\dev\Estudos\C#\Projetos de Estudo\Study\obj\Debug\net8.0\TwoPointersAndReverse.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\Estudos\C#\Projetos de Estudo\Study\obj\Debug\net8.0\TwoPointersAndReverse.AssemblyInfoInputs.cache
+C:\dev\Estudos\C#\Projetos de Estudo\Study\obj\Debug\net8.0\TwoPointersAndReverse.AssemblyInfo.cs
+C:\dev\Estudos\C#\Projetos de Estudo\Study\obj\Debug\net8.0\TwoPointersAndReverse.csproj.CoreCompileInputs.cache
+C:\dev\Estudos\C#\Projetos de Estudo\Study\obj\Debug\net8.0\TwoPointersAndReverse.sourcelink.json
+C:\dev\Estudos\C#\Projetos de Estudo\Study\obj\Debug\net8.0\TwoPointersAndReverse.dll
+C:\dev\Estudos\C#\Projetos de Estudo\Study\obj\Debug\net8.0\refint\TwoPointersAndReverse.dll
+C:\dev\Estudos\C#\Projetos de Estudo\Study\obj\Debug\net8.0\TwoPointersAndReverse.pdb
+C:\dev\Estudos\C#\Projetos de Estudo\Study\obj\Debug\net8.0\TwoPointersAndReverse.genruntimeconfig.cache
+C:\dev\Estudos\C#\Projetos de Estudo\Study\obj\Debug\net8.0\ref\TwoPointersAndReverse.dll

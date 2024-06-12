@@ -1,0 +1,15 @@
+C:\dev\Estudos\C#\Projetos de Estudo\Study2\bin\Debug\net8.0\Study2.exe
+C:\dev\Estudos\C#\Projetos de Estudo\Study2\bin\Debug\net8.0\Study2.deps.json
+C:\dev\Estudos\C#\Projetos de Estudo\Study2\bin\Debug\net8.0\Study2.runtimeconfig.json
+C:\dev\Estudos\C#\Projetos de Estudo\Study2\bin\Debug\net8.0\Study2.dll
+C:\dev\Estudos\C#\Projetos de Estudo\Study2\bin\Debug\net8.0\Study2.pdb
+C:\dev\Estudos\C#\Projetos de Estudo\Study2\obj\Debug\net8.0\Study2.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\Estudos\C#\Projetos de Estudo\Study2\obj\Debug\net8.0\Study2.AssemblyInfoInputs.cache
+C:\dev\Estudos\C#\Projetos de Estudo\Study2\obj\Debug\net8.0\Study2.AssemblyInfo.cs
+C:\dev\Estudos\C#\Projetos de Estudo\Study2\obj\Debug\net8.0\Study2.csproj.CoreCompileInputs.cache
+C:\dev\Estudos\C#\Projetos de Estudo\Study2\obj\Debug\net8.0\Study2.sourcelink.json
+C:\dev\Estudos\C#\Projetos de Estudo\Study2\obj\Debug\net8.0\Study2.dll
+C:\dev\Estudos\C#\Projetos de Estudo\Study2\obj\Debug\net8.0\refint\Study2.dll
+C:\dev\Estudos\C#\Projetos de Estudo\Study2\obj\Debug\net8.0\Study2.pdb
+C:\dev\Estudos\C#\Projetos de Estudo\Study2\obj\Debug\net8.0\Study2.genruntimeconfig.cache
+C:\dev\Estudos\C#\Projetos de Estudo\Study2\obj\Debug\net8.0\ref\Study2.dll
