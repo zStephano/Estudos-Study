@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TwoPointersAndReverse
-build_property.ProjectDir = C:\dev\Estudos\C#\Projetos de Estudo\Study\
+build_property.ProjectDir = C:\dev\Estudos\C#\Projetos de Estudo\TwoPointerAndReverse\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

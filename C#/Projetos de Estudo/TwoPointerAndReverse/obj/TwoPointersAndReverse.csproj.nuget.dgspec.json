@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\Study\\TwoPointersAndReverse.csproj": {}
+    "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\TwoPointerAndReverse\\TwoPointersAndReverse.csproj": {}
   },
   "projects": {
-    "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\Study\\TwoPointersAndReverse.csproj": {
+    "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\TwoPointerAndReverse\\TwoPointersAndReverse.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\Study\\TwoPointersAndReverse.csproj",
+        "projectUniqueName": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\TwoPointerAndReverse\\TwoPointersAndReverse.csproj",
         "projectName": "TwoPointersAndReverse",
-        "projectPath": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\Study\\TwoPointersAndReverse.csproj",
+        "projectPath": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\TwoPointerAndReverse\\TwoPointersAndReverse.csproj",
         "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\Study\\obj\\",
+        "outputPath": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\TwoPointerAndReverse\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config",
