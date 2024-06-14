@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\Study2\\Study2.csproj",
-      "projectName": "Study2",
-      "projectPath": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\Study2\\Study2.csproj",
+      "projectUniqueName": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\Study2\\TwoSum.csproj",
+      "projectName": "TwoSum",
+      "projectPath": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\Study2\\TwoSum.csproj",
       "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
       "outputPath": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\Study2\\obj\\",
       "projectStyle": "PackageReference",

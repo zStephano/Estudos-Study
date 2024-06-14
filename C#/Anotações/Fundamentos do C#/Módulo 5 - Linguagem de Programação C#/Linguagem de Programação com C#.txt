@@ -121,8 +121,122 @@ Também temos o sbyte que permite valores negativos.
 
 # Parse
 - Diferente da conversão implícita e da conversão explícita, o Parse realiza a transcrição da variável de um carectere ou string para outro tipo qualquer que seja compatível com o dado esperado, exeplo: int inteiro = int.Parse("100").
+- O método Parse é um método estático das classes numéricas (como int, double, decimal, etc.) e da classe DateTime. Ele é usado para converter uma string em uma instância do tipo apropriado.
 - Use Parse quando você sabe que está lidando com uma string que precisa ser convertida para um tipo específico e você quer validar estritamente o formato da string.
 
 # Convert
 - Diferente do Parse, o Convert permite converter vários tipos de valor, não apenas string.
+- O método Convert faz parte da classe Convert e é utilizado para converter um tipo de dado em outro. Ele é mais flexível e suporta a conversão entre muitos tipos diferentes.
 - Use Convert quando você precisa de flexibilidade ou quando está lidando com valores que podem ser nulos ou quando você está lidando com um objeto que pode ser de diferentes tipos.
+
+# Operações Aritméticas
+- Multiplicação e divisão são executadas primeiro.
+- Caso queira executar em outra ordem, usar parênteses.
+- Aceita shor, int, float, double e decimal.
+- Em caso de uso de números interiros: Se o valor for real, será arredondado.
+	Exemplo: resultado 4.4 => 5.
+
+# Operadores de Atribuição
+- Utilizamos igual para atribuir um valor. Porém, podemos utilizar igual junto a um operador aritético.
+	Exemplo: x += 5 é o mesmo que x = x + 5.
+
+# Operadores de Comparação
+- Podemos comparar qualquer tipo de dado. A comparação sempre retorna verdadeiro ou falso.
+- As definições de comparadores são:
+	- Igual => ==
+	- Diferente => !=
+	- Maior que => >
+	- Menor que => <
+	- Maior ou igual a => >=
+	- Menor ou igual a => <=
+
+# Operadores Lógicos
+- Usados para operações condicionais, assim, retornando sempre verdadeiro ou falso. Suas definições são:
+	- E - and => &&
+	- Ou - or => ||
+	- Negação - not => !
+	
+# Operador Condicional: IF
+- Representando "SE", ou seja "caso alguma condição seja atendida". Utilizado para tomada de decisões e também utiliza operadores lógicos.
+- Complemento ao IF, caso a condição não seja atendida, podemos ter o ELSE IF "Se não se" - não tem limites (usar com cuidado).
+- Podemos usar apenas o ELSE para executar algo caso a condição principal não seja atendida.
+
+# Estrutura Condicional: SWITCH
+- Utilizado quando temos muitas condições de forma a ser executado em cascata. Devemos parar manualmente a execução com o comando BREAK.
+- Possui uma execução padrão chamada DEFAULT.
+
+# Laços de Repetição FOR
+- Tradução "para", ou seja, para cada item em um valor. Executa uma determinada ação várias vezes, definido pela palavra FOR.
+- Exige 3 parâmetros:
+	- Contador;
+	- Condição;
+	- Incremento.
+
+# Laços de Repetição: WHILE
+- Tradução "enquanto", ou seja, enquanto uma condição for verdadeira. Definido pela palavra WHILE.
+- Exige apenas uma condição. Checa a condição ANTES de executar.
+
+# Laços de Repetição: DO
+- Tradução "faça", ou seja, realiza uma ação enquanto. Definido pela palavra DO/WHILE.
+- Exige apenas uma condição do WHILE.
+- Checa a condição DEPOIS de executar.
+
+# Métodos ou Funções
+- Podemos segmentar nosso programa em funções, também conhecidos como métodos.
+- O MAIN é um exemplo de método.
+- Possui um retorno, um nome e parâmetros.
+- Esta composição é camada de assinatura.
+- Começam sempre com Maiúscula.
+
+# Tipos de Referência (Reference Type) e Tipos de Valor (Value Type)
+- A memória é dividida em duas partes, Heap e Stack.
+- Heap armazena DADOS.
+- Stack armazena referência para os dados.
+- Qualquer tipo no .NET é tratado como:
+	- Tipo de Referência (Reference Type);
+	- Tipo de Valor (Value Type).
+
+- Tipos de Valor
+1 - Armazenamento na Memória:
+Tipos de valor armazenam os dados diretamente na stack (pilha).
+A stack é uma área de memória de acesso rápido e com vida curta, que armazena variáveis locais e chamadas de função.
+
+2 - Cópia de Dados:
+Quando um tipo de valor é atribuído a outra variável, uma cópia dos dados é feita. As duas variáveis operam independentemente.
+
+3 - Tipos Comuns:
+int, float, double, decimal, bool, char, structs, enum.
+
+- Tipos de Referência
+
+1 - Armazenamento na Memória:
+Tipos de referência armazenam uma referência (endereço de memória) para os dados que são armazenados no heap (monte).
+O heap é uma área de memória maior e mais lenta, mas que pode armazenar dados por mais tempo (duração da aplicação).
+
+2 - Cópia de Referências:
+Quando um tipo de referência é atribuído a outra variável, ambas as variáveis referenciam o mesmo objeto na memória. Mudanças feitas através de uma variável afetam o objeto referenciado por ambas.
+
+3 - Tipos Comuns:
+class, interface, delegate, object, string, arrays.
+
+Resumo das diferenças:
+
+Característica - Tipos de Valor:
+Armazenamento: Stack
+Cópia: Cópia de valor
+Mutabilidade: Independente após cópia
+Desempenho: Geralmente mais rápido
+Exemplos: int, double, struct, bool...
+
+Característica - Tipos de Referência:
+Armazenamento: Heap
+Cópia: Cópia de referência
+Mutabilidade: Mutável através de qualquer referência
+Desempenho: Pode ser mais lento
+Exemplos: class, string, array, delegate...
+
+- Quando usar cada um:
+
+- Tipos de Valor: Use para dados pequenos, simples e que devem ser imutáveis após a cópia. Exemplos incluem coordenadas, cores, números. Stack: Use para dados temporários, como variáveis locais e parâmetros de método. Adequado para dados que têm vida útil curta e conhecida.
+
+- Tipos de Referência: Use para objetos complexos, grandes ou que devem ser compartilhados e modificados por diferentes partes do código. Exemplos incluem objetos de negócios, entidades de banco de dados, strings. Heap: Use para objetos que precisam ser acessíveis de diferentes partes do programa e que podem ter uma vida útil mais longa e indeterminada.

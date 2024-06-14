@@ -1,0 +1,15 @@
+C:\dev\Estudos\C#\Projetos de Estudo\Methods\bin\Debug\net8.0\Methods.exe
+C:\dev\Estudos\C#\Projetos de Estudo\Methods\bin\Debug\net8.0\Methods.deps.json
+C:\dev\Estudos\C#\Projetos de Estudo\Methods\bin\Debug\net8.0\Methods.runtimeconfig.json
+C:\dev\Estudos\C#\Projetos de Estudo\Methods\bin\Debug\net8.0\Methods.dll
+C:\dev\Estudos\C#\Projetos de Estudo\Methods\bin\Debug\net8.0\Methods.pdb
+C:\dev\Estudos\C#\Projetos de Estudo\Methods\obj\Debug\net8.0\Methods.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\Estudos\C#\Projetos de Estudo\Methods\obj\Debug\net8.0\Methods.AssemblyInfoInputs.cache
+C:\dev\Estudos\C#\Projetos de Estudo\Methods\obj\Debug\net8.0\Methods.AssemblyInfo.cs
+C:\dev\Estudos\C#\Projetos de Estudo\Methods\obj\Debug\net8.0\Methods.csproj.CoreCompileInputs.cache
+C:\dev\Estudos\C#\Projetos de Estudo\Methods\obj\Debug\net8.0\Methods.sourcelink.json
+C:\dev\Estudos\C#\Projetos de Estudo\Methods\obj\Debug\net8.0\Methods.dll
+C:\dev\Estudos\C#\Projetos de Estudo\Methods\obj\Debug\net8.0\refint\Methods.dll
+C:\dev\Estudos\C#\Projetos de Estudo\Methods\obj\Debug\net8.0\Methods.pdb
+C:\dev\Estudos\C#\Projetos de Estudo\Methods\obj\Debug\net8.0\Methods.genruntimeconfig.cache
+C:\dev\Estudos\C#\Projetos de Estudo\Methods\obj\Debug\net8.0\ref\Methods.dll
