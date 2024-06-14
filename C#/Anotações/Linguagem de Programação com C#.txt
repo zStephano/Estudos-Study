@@ -83,7 +83,7 @@ Também temos o sbyte que permite valores negativos.
 - Assim como temos signed nos bytes, nos números por padrão são permitidos valores negativos, então o UNSIGNED é utilizado para definir que o mesmo não pode receber valores negativos.
 
 # Números reais
-- Números reais são números que possuem pontuação, estes são definidos pelos tipos FLOAT, DOUBLE, DECIMAL.
+- Números reais são números que possuem pontuação, estes são definidos pelos tipos FLOAT(32-bit), DOUBLE(64-bit), DECIMAL(128-bit).
 - Por padrão, possuem assimilação negativa e positiva, dispensando o uso do SIGNED/UNSIGNED em seus tipos.
 
 # Booleano
@@ -106,3 +106,23 @@ Também temos o sbyte que permite valores negativos.
 - Diferente do zero ou string vazia. Podemos atribuir NULL a um objeto desde que o mesmo seja marcado como nullable usando interrogação na frente do tipo.
 - Todo tipo primitivo pode ser Nullable.
 - Se uma chamada a um valor nulo for feita um erro será apresentado.
+
+# Alias
+- Alias é um apelido que todo tipo no .NET tem, por exemplo: System.String tem o alias STRING.
+- Como o C# é case sensitive, tanto faz escrevermos um ou outro, porém, é recomendado sempre usar o ALIAS.
+
+# Conversão Implícita
+- É comum precisarmos tranformar um dado de tipo X para o tipo Y. Para isso, existem dois tipos de conversão, as implícitas e as explícitas.
+- As implícitas são conversões que podem ser executadas apenas com passagem de dados, possuem tipos compatíveis.
+- A conversão implícita só ocorre se os tipos forem compatíveis, exemplo: FLOAT não cabe em INT mas INT cabe em FLOAT.
+
+# Conversão Explícita
+- Ocorre quando os tipos não são compatíveis. É dada pelo uso do tipo entre parênteses antes da atribuição.
+
+# Parse
+- Diferente da conversão implícita e da conversão explícita, o Parse realiza a transcrição da variável de um carectere ou string para outro tipo qualquer que seja compatível com o dado esperado, exeplo: int inteiro = int.Parse("100").
+- Use Parse quando você sabe que está lidando com uma string que precisa ser convertida para um tipo específico e você quer validar estritamente o formato da string.
+
+# Convert
+- Diferente do Parse, o Convert permite converter vários tipos de valor, não apenas string.
+- Use Convert quando você precisa de flexibilidade ou quando está lidando com valores que podem ser nulos ou quando você está lidando com um objeto que pode ser de diferentes tipos.
