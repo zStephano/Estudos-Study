@@ -77,3 +77,32 @@
 Também temos o sbyte que permite valores negativos.
 - Byte (8-bit) vai de 0 até 255.
 - SByte (8-bit) vai de -128 a 127.
+
+# Números inteiros
+- Números inteiros são números sem pontuação, estes são definidos pelos tipos SHORT/USHORT, INT/UINT, LONG/ULONG.
+- Assim como temos signed nos bytes, nos números por padrão são permitidos valores negativos, então o UNSIGNED é utilizado para definir que o mesmo não pode receber valores negativos.
+
+# Números reais
+- Números reais são números que possuem pontuação, estes são definidos pelos tipos FLOAT, DOUBLE, DECIMAL.
+- Por padrão, possuem assimilação negativa e positiva, dispensando o uso do SIGNED/UNSIGNED em seus tipos.
+
+# Booleano
+- O tipo bool armazena apenas TRUE ou FALSE, definido pela palavra BOOL. Seu tamanho é 8-bit.
+
+# Char
+- Utilizado para armazenas apenas e somente um caractere no formato Unicode, definido pela palavra reservada CHAR. Sua atribuição é dada por aspas simples. Seu tamanho é de 16-bit.
+
+# String
+- Armazena uma cadeia de caracteres. Podemos pensar nele como uma lista de CHAR, sendo definido pela palavra reservada string. Sua atribuição é dada por aspas duplas.
+
+# Var
+- Substitui o nome de um tipo. Será do tipo do primeiro valor atribuído.
+
+# Object
+- Tipo genérico que recebe qualquer valor ou objeto. Caso não saiba o tipo da informação ou ela seja de vários tipos diferentes.
+- Não possui intelisente (ajuda dos editores) por ser um tipo desconhecido.
+
+# Nullable
+- Diferente do zero ou string vazia. Podemos atribuir NULL a um objeto desde que o mesmo seja marcado como nullable usando interrogação na frente do tipo.
+- Todo tipo primitivo pode ser Nullable.
+- Se uma chamada a um valor nulo for feita um erro será apresentado.
