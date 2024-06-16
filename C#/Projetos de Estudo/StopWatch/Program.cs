@@ -4,21 +4,45 @@ static void Menu()
 {
     Console.Clear();
     Console.WriteLine("Quanto tempo gostaria de cronometrar?");
-    int time = int.Parse(Console.ReadLine());
+    Console.WriteLine("Digite a quantidade de dias:");
+    short dias = short.Parse(Console.ReadLine());
+    Console.WriteLine("Digite a quantidade de horas");
+    short horas = short.Parse(Console.ReadLine());
+    Console.WriteLine("Digite a quantidade de minutos");
+    short minutos = short.Parse(Console.ReadLine());
+    Console.WriteLine("Digite a quantidade de segundos");
+    short segundos = short.Parse(Console.ReadLine());
+
+    short[] time = [dias, horas, minutos, segundos];
 
     Cronometro(time);
 }
 
-static void Cronometro(int time)
+static void Cronometro(short[] times)
 {
-    int currentTime = 0;
 
-    while (currentTime < time)
+    short dias = times[0];
+    short horas = times[1];
+    short minutos = times[2];
+    short segundos = times[3];
+
+    short currentTime = 0;
+
+    while (currentTime < dias)
     {
-        Console.Clear();
-        currentTime++;
-        Console.WriteLine(currentTime);
-        Thread.Sleep(1000);
+        while (currentTime < horas)
+        {
+            while (currentTime < minutos)
+            {
+                while (currentTime < segundos)
+                {
+                    Console.Clear();
+                    Console.WriteLine($"Dias: {dias}, horas: {horas}, minutos: {minutos}, segundos: {segundos}");
+                }
+            }
+        }
+    }
+
     }
 
     FimCronometro();
