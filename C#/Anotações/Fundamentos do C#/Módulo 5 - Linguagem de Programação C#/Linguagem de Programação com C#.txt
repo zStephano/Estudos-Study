@@ -246,3 +246,8 @@ Exemplos: class, string, array, delegate...
 - São do Tipo de Valor que armazenam apenas outros tipos de dados.
 - Definido pela palavra STRUCT e composto de propriedades e métodos. Seus nomes começam sempre com maiúsculo, assim como para propriedades e métodos.
 - Criados a partir da palavra NEW, onde neste momento temos os valores sendo instanciados.
+
+# Enumeradores
+- Usado para fornecer uma melhor visualização do código, substituindo o uso de inteiros.
+- Usado em listas curtas e/ou em dados fixos - HARD CODED.
+- Sempre em maiúsculo.

@@ -2,10 +2,6 @@
 
 string pastelzao = RetornaPastel("Frango com Catupiry");
 Console.WriteLine(pastelzao);
-static void MeuMetodo()
-{
-    Console.WriteLine("Meu pastel é mais barato");
-}
 
 static string RetornaPastel(
     string tipo,

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\Study2\\TwoSum.csproj": {}
+    "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\StopWatch\\StopWatch.csproj": {}
   },
   "projects": {
-    "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\Study2\\TwoSum.csproj": {
+    "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\StopWatch\\StopWatch.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\Study2\\TwoSum.csproj",
-        "projectName": "TwoSum",
-        "projectPath": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\Study2\\TwoSum.csproj",
+        "projectUniqueName": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\StopWatch\\StopWatch.csproj",
+        "projectName": "StopWatch",
+        "projectPath": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\StopWatch\\StopWatch.csproj",
         "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\Study2\\obj\\",
+        "outputPath": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\StopWatch\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config",

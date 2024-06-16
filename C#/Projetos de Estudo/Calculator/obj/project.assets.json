@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\Study2\\TwoSum.csproj",
-      "projectName": "TwoSum",
-      "projectPath": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\Study2\\TwoSum.csproj",
+      "projectUniqueName": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\Calculator\\Calculator.csproj",
+      "projectName": "Calculator",
+      "projectPath": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\Calculator\\Calculator.csproj",
       "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\Study2\\obj\\",
+      "outputPath": "C:\\dev\\Estudos\\C#\\Projetos de Estudo\\Calculator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config",
