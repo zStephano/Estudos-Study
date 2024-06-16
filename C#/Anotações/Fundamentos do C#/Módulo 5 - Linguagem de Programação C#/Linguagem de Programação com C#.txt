@@ -240,3 +240,9 @@ Exemplos: class, string, array, delegate...
 - Tipos de Valor: Use para dados pequenos, simples e que devem ser imutáveis após a cópia. Exemplos incluem coordenadas, cores, números. Stack: Use para dados temporários, como variáveis locais e parâmetros de método. Adequado para dados que têm vida útil curta e conhecida.
 
 - Tipos de Referência: Use para objetos complexos, grandes ou que devem ser compartilhados e modificados por diferentes partes do código. Exemplos incluem objetos de negócios, entidades de banco de dados, strings. Heap: Use para objetos que precisam ser acessíveis de diferentes partes do programa e que podem ter uma vida útil mais longa e indeterminada.
+
+# Structs
+- Tipos de dado estruturado, sendo a estrutura, o esqueleto.
+- São do Tipo de Valor que armazenam apenas outros tipos de dados.
+- Definido pela palavra STRUCT e composto de propriedades e métodos. Seus nomes começam sempre com maiúsculo, assim como para propriedades e métodos.
+- Criados a partir da palavra NEW, onde neste momento temos os valores sendo instanciados.
