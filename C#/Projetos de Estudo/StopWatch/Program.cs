@@ -1,4 +1,6 @@
-﻿Menu();
+﻿using System.Timers;
+
+Menu();
 
 static void Menu()
 {
@@ -26,28 +28,48 @@ static void Cronometro(short[] times)
     short minutos = times[2];
     short segundos = times[3];
 
-    short currentTime = 0;
+    OnTimerEvent(dias, horas, minutos, segundos);
 
-    while (currentTime < dias)
-    {
-        while (currentTime < horas)
-        {
-            while (currentTime < minutos)
-            {
-                while (currentTime < segundos)
-                {
-                    Console.Clear();
-                    Console.WriteLine($"Dias: {dias}, horas: {horas}, minutos: {minutos}, segundos: {segundos}");
-                }
-            }
-        }
-    }
-
-    }
-
-    FimCronometro();
 }
 
+static void OnTimerEvent(short dias, short horas, short minutos, short segundos)
+{
+    short currentTime = 0;
+    short diasOnTimer = 0;
+    short horasOnTimer = 0;
+    short minutosOnTimer = 0;
+    short segundosOnTimer = 0;
+
+    while (segundosOnTimer != segundos
+        || minutosOnTimer != minutos
+        || horasOnTimer != horas
+        || diasOnTimer != dias)
+    {
+        Console.Clear();
+        currentTime++;
+        segundosOnTimer = currentTime;
+        if (segundosOnTimer == 60)
+        {
+            minutosOnTimer++;
+            currentTime = 0;
+            segundosOnTimer = 0;
+        }
+        if (minutosOnTimer == 60)
+        {
+            horasOnTimer++;
+            minutosOnTimer = 0;
+        }
+        if (horasOnTimer == 24)
+        {
+            diasOnTimer++;
+            horasOnTimer = 0;
+        }
+        Console.WriteLine($"Dias: {diasOnTimer}, horas: {horasOnTimer}, minutos: {minutosOnTimer}, segundos: {segundosOnTimer}");
+        //Thread.Sleep(10);
+
+    }
+    FimCronometro();
+}
 static void FimCronometro()
 {
     Console.Clear();
@@ -56,7 +78,7 @@ static void FimCronometro()
     Console.WriteLine(" 2 - NÃO ");
     int resposta = int.Parse(Console.ReadLine());
 
-    switch(resposta)
+    switch (resposta)
     {
         case 1: Menu(); break;
         case 2: System.Environment.Exit(0); break;
