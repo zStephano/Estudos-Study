@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Methods", "Methods\Methods.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoSum", "TwoSum\TwoSum.csproj", "{8CD5256B-BFEE-400A-9249-A7BB3B6370BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Calculator.csproj", "{7005CDFC-D32B-493C-B3DD-2CED816499E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator", "Calculator\Calculator.csproj", "{7005CDFC-D32B-493C-B3DD-2CED816499E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StopWatch", "StopWatch\StopWatch.csproj", "{66745740-7E2D-452C-A4DC-4BB2492F5718}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StopWatch", "StopWatch\StopWatch.csproj", "{66745740-7E2D-452C-A4DC-4BB2492F5718}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextEditor", "TextEditor\TextEditor.csproj", "{588ABA8B-064A-4938-9196-6256730B1794}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{66745740-7E2D-452C-A4DC-4BB2492F5718}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66745740-7E2D-452C-A4DC-4BB2492F5718}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66745740-7E2D-452C-A4DC-4BB2492F5718}.Release|Any CPU.Build.0 = Release|Any CPU
+		{588ABA8B-064A-4938-9196-6256730B1794}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{588ABA8B-064A-4938-9196-6256730B1794}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{588ABA8B-064A-4938-9196-6256730B1794}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{588ABA8B-064A-4938-9196-6256730B1794}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
