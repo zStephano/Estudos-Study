@@ -1,4 +1,6 @@
 ﻿using System.IO;
+using System.Text;
+using static System.Net.Mime.MediaTypeNames;
 
 Menu();
 
@@ -9,7 +11,7 @@ static void Menu()
     Console.WriteLine("1 - Abrir arquivo de texto");
     Console.WriteLine("2 - Criar novo arquivo");
     Console.WriteLine("0 - Sair");
-    short option = short .Parse(Console.ReadLine());
+    short option = short.Parse(Console.ReadLine());
 
     switch (option)
     {
@@ -26,25 +28,35 @@ static void Open()
     Console.WriteLine("Qual caminho do arquivo?");
     string path = Console.ReadLine();
 
-    string textOpen = "";
+    string textOpen = ReadFile(path);
 
-    using (var file = new StreamReader(path))
+    Console.Write(textOpen);
+
+    Console.WriteLine("------------------------");
+    Console.WriteLine("Deseja continuar escrevendo neste arquivo?");
+    Console.WriteLine("1 - SIM // 2 NÃO");
+    short option = short.Parse(Console.ReadLine());
+
+    switch (option)
     {
-        textOpen = file.ReadToEnd();
-        Console.Write(textOpen);
-
-        Console.WriteLine("------------------------");
-        Console.WriteLine("Deseja continuar escrevendo neste arquivo?");
-        Console.WriteLine("1 - SIM // 2 NÃO");
-        short option = short.Parse(Console.ReadLine());
-        
-        switch (option)
-        {
-            case 1: ContinuousEditing(textOpen, file); break;
-            case 2: Menu(); break;
-        }
-
+        case 1: ContinuousEditing(textOpen); break;
+        case 2: Menu(); break;
     }
+}
+
+static string ReadFile(string filePath)
+{
+    string textOpen;
+    var fileStream = new FileStream(filePath, FileMode.Open,
+    FileAccess.Read); //open text file
+    //vvv read text file (or however you implement it like here vvv
+    using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
+    {
+        textOpen = streamReader.ReadToEnd();
+    }
+    //finally, close text file
+    fileStream.Close();
+    return textOpen;
 }
 
 static void Edit()
@@ -59,12 +71,12 @@ static void Edit()
         text += Console.ReadLine();
         text += Environment.NewLine;
     }
-    while (Console.ReadKey().Key != ConsoleKey.Escape) ;
+    while (Console.ReadKey().Key != ConsoleKey.Escape);
 
     Save(text);
 }
 
-static void ContinuousEditing(string textfile, StreamReader file)
+static void ContinuousEditing(string textfile)
 {
     Console.Clear();
     Console.Write(textfile);
@@ -75,7 +87,7 @@ static void ContinuousEditing(string textfile, StreamReader file)
         textfile += Environment.NewLine;
     }
     while (Console.ReadKey().Key != ConsoleKey.Escape);
-
+    
     Save(textfile);
 }
 
@@ -87,7 +99,7 @@ static void Save(string text)
 
     if (File.Exists(path))
     {
-        ReplaceFile(path);
+        ReplaceFile(path, text);
     }
     else
     {
@@ -103,7 +115,7 @@ static void Save(string text)
     Menu();
 }
 
-static void ReplaceFile(string filePath)
+static void ReplaceFile(string filePath, string textFile)
 {
     Console.WriteLine($"Um arquivo já existe neste diretório {filePath}, deseja substitui-lo?");
     Console.WriteLine("1 - SIM // 2 - NÃO");
@@ -111,7 +123,12 @@ static void ReplaceFile(string filePath)
 
     if (option == 1)
     {
-        File.Replace(filePath, filePath, null);
+        File.Delete(filePath);
+        using (var path = new StreamWriter(filePath))
+        {
+
+            path.Write(textFile);
+        }
     }
     else if (option == 2)
     {
