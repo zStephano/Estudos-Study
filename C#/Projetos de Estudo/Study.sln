@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StopWatch", "StopWatch\Stop
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextEditor", "TextEditor\TextEditor.csproj", "{588ABA8B-064A-4938-9196-6256730B1794}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringsStudy", "StringsStudy\StringsStudy.csproj", "{60A609AA-0040-4491-94B7-70C87848CE26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringsStudy", "StringsStudy\StringsStudy.csproj", "{60A609AA-0040-4491-94B7-70C87848CE26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTMLEditor", "HTMLEditor\HTMLEditor.csproj", "{AB15A70E-D00C-4150-8CE5-32E9D2DB1543}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{60A609AA-0040-4491-94B7-70C87848CE26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60A609AA-0040-4491-94B7-70C87848CE26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60A609AA-0040-4491-94B7-70C87848CE26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB15A70E-D00C-4150-8CE5-32E9D2DB1543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB15A70E-D00C-4150-8CE5-32E9D2DB1543}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB15A70E-D00C-4150-8CE5-32E9D2DB1543}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB15A70E-D00C-4150-8CE5-32E9D2DB1543}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

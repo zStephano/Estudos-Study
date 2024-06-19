@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("TwoSum")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("HTMLEditor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ac5d9bb54226d7af010c16493ab12e664613c37")]
-[assembly: System.Reflection.AssemblyProductAttribute("TwoSum")]
-[assembly: System.Reflection.AssemblyTitleAttribute("TwoSum")]
+[assembly: System.Reflection.AssemblyProductAttribute("HTMLEditor")]
+[assembly: System.Reflection.AssemblyTitleAttribute("HTMLEditor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.
