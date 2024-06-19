@@ -1,0 +1,110 @@
+In C#, the following types are **not** considered primitive data types:
+
+1. **string**: Even though `string` is a fundamental and widely used type in C#, it is actually a reference type, specifically a class, and not a primitive data type.
+
+2. **object**: This is the base type for all types in C#, including primitive types, but it is not a primitive type itself. It is a reference type.
+
+3. **dynamic**: This type bypasses compile-time type checking and resolves type information at runtime. It is a reference type and not considered primitive.
+
+4. **decimal**: Although `decimal` is a value type used for high-precision arithmetic, it is not considered a primitive type. It is a complex value type.
+
+### Summary of Non-Primitive Types
+
+- `string`
+- `object`
+- `dynamic`
+- `decimal`
+
+These types provide essential functionality in C#, but they are not considered primitive types. Primitive types in C# include `byte`, `sbyte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, `char`, and `bool`.
+
+------
+
+In C#, primitive data types are the basic types of data built into the language. These types represent the simplest forms of data and are directly supported by the language and runtime. Here’s a list of the primitive data types in C#:
+
+### Numeric Types
+
+1. **Integral Types**
+   - **byte**: 8-bit unsigned integer (0 to 255)
+   - **sbyte**: 8-bit signed integer (-128 to 127)
+   - **short**: 16-bit signed integer (-32,768 to 32,767)
+   - **ushort**: 16-bit unsigned integer (0 to 65,535)
+   - **int**: 32-bit signed integer (-2,147,483,648 to 2,147,483,647)
+   - **uint**: 32-bit unsigned integer (0 to 4,294,967,295)
+   - **long**: 64-bit signed integer (-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807)
+   - **ulong**: 64-bit unsigned integer (0 to 18,446,744,073,709,551,615)
+
+2. **Floating-Point Types**
+   - **float**: Single-precision floating-point (approximately ±1.5 × 10^−45 to ±3.4 × 10^38, 7 digits of precision)
+   - **double**: Double-precision floating-point (approximately ±5.0 × 10^−324 to ±1.7 × 10^308, 15-16 digits of precision)
+   - **decimal**: High-precision decimal (±1.0 × 10^−28 to ±7.9228 × 10^28, 28-29 significant digits)
+
+### Character and String Types
+
+- **char**: Single 16-bit Unicode character (U+0000 to U+FFFF)
+- **string**: Sequence of characters, representing text (variable length)
+
+### Boolean Type
+
+- **bool**: Boolean value (true or false)
+
+### Special Types
+
+- **object**: The base type for all types in C#. All types, including primitive types, derive from `object`.
+- **dynamic**: Type that bypasses compile-time type checking. The type of the object is determined at runtime.
+- **void**: Used to specify that a method does not return a value.
+
+### Example Usage
+
+Here are some examples of how these primitive data types can be declared and used in C#:
+
+```csharp
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Integral types
+        byte byteValue = 255;
+        sbyte sbyteValue = -128;
+        short shortValue = -32768;
+        ushort ushortValue = 65535;
+        int intValue = -2147483648;
+        uint uintValue = 4294967295;
+        long longValue = -9223372036854775808;
+        ulong ulongValue = 18446744073709551615;
+
+        // Floating-point types
+        float floatValue = 3.14F;
+        double doubleValue = 3.14;
+        decimal decimalValue = 3.14M;
+
+        // Character and string types
+        char charValue = 'A';
+        string stringValue = "Hello, World!";
+
+        // Boolean type
+        bool boolValue = true;
+
+        // Output the values
+        Console.WriteLine($"byteValue: {byteValue}");
+        Console.WriteLine($"sbyteValue: {sbyteValue}");
+        Console.WriteLine($"shortValue: {shortValue}");
+        Console.WriteLine($"ushortValue: {ushortValue}");
+        Console.WriteLine($"intValue: {intValue}");
+        Console.WriteLine($"uintValue: {uintValue}");
+        Console.WriteLine($"longValue: {longValue}");
+        Console.WriteLine($"ulongValue: {ulongValue}");
+        Console.WriteLine($"floatValue: {floatValue}");
+        Console.WriteLine($"doubleValue: {doubleValue}");
+        Console.WriteLine($"decimalValue: {decimalValue}");
+        Console.WriteLine($"charValue: {charValue}");
+        Console.WriteLine($"stringValue: {stringValue}");
+        Console.WriteLine($"boolValue: {boolValue}");
+    }
+}
+```
+
+### Summary
+
+These primitive data types form the foundation of data handling in C#. They are directly supported by the language and runtime, providing essential functionality for a wide range of programming scenarios.

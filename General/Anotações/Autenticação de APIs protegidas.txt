@@ -1,0 +1,13 @@
+Lidar com a autenticação de APIs protegidas envolve várias abordagens, dependendo dos requisitos de segurança e das tecnologias envolvidas. Aqui estão algumas maneiras comuns de lidar com isso:
+
+1. **Autenticação Baseada em Token**: Utilização de tokens de acesso (como JWT - JSON Web Tokens) para autenticar solicitações. O cliente obtém um token após a autenticação bem-sucedida e envia-o em cada requisição para a API, geralmente no cabeçalho `Authorization`.
+
+2. **OAuth**: Implementação do protocolo OAuth para delegação de autorização, permitindo que aplicativos obtenham acesso a recursos em nome de um usuário. Isso é comum em cenários onde várias partes precisam acessar recursos protegidos.
+
+3. **Autenticação via Header**: Uso de cabeçalhos personalizados ou padrões (como Basic Auth) para enviar credenciais de autenticação. Isso é mais simples, mas menos seguro do que a autenticação baseada em token.
+
+4. **Certificados TLS/SSL**: Em alguns casos, autenticação mútua usando certificados digitais para validar tanto o cliente quanto o servidor.
+
+5. **Integração com Serviços de Identidade**: Utilização de serviços de terceiros para gerenciamento de identidade e autenticação, como Auth0, Okta, AWS Cognito, entre outros.
+
+Ao escolher o método de autenticação, é importante considerar fatores como segurança, escalabilidade, facilidade de implementação e requisitos específicos do projeto.

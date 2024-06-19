@@ -1,0 +1,77 @@
+Regex, ou expressão regular, é uma sequência de caracteres que forma um padrão de pesquisa. Esse padrão pode ser usado para fazer correspondências com cadeias de caracteres, verificar se uma string contém um determinado padrão, extrair substrings, ou substituir partes de uma string. Em essência, regex é uma ferramenta poderosa para manipulação de texto.
+
+### Componentes Básicos de Regex
+
+1. **Caracteres Literais**: Correspondem exatamente ao próprio caractere. Por exemplo, a expressão regular `cat` corresponde exatamente à string "cat".
+
+2. **Metacaracteres**: Caracteres com significado especial na construção do padrão. Alguns exemplos incluem:
+   - `.`: Corresponde a qualquer caractere, exceto uma nova linha.
+   - `^`: Corresponde ao início de uma string.
+   - `$`: Corresponde ao final de uma string.
+   - `*`: Corresponde a zero ou mais ocorrências do caractere anterior.
+   - `+`: Corresponde a uma ou mais ocorrências do caractere anterior.
+   - `?`: Corresponde a zero ou uma ocorrência do caractere anterior.
+   - `[]`: Define um conjunto de caracteres. Por exemplo, `[abc]` corresponde a 'a', 'b', ou 'c'.
+   - `|`: Operador de alternância. Por exemplo, `cat|dog` corresponde a "cat" ou "dog".
+
+3. **Sequências de Escape**: Usadas para corresponder caracteres especiais ou para adicionar funcionalidade. Por exemplo, `\d` corresponde a qualquer dígito e `\w` corresponde a qualquer caractere de palavra (letras, dígitos e sublinhado).
+
+4. **Grupos e Captura**: Os parênteses `()` são usados para agrupar partes da expressão regular e capturar substrings correspondentes.
+
+5. **Quantificadores**: Especificam quantas vezes um elemento deve aparecer:
+   - `{n}`: Exatamente n vezes.
+   - `{n,}`: Pelo menos n vezes.
+   - `{n,m}`: Entre n e m vezes.
+
+### Exemplos de Uso de Regex
+
+#### Correspondência Simples
+```csharp
+string pattern = @"cat";
+string input = "The cat sat on the mat.";
+bool isMatch = Regex.IsMatch(input, pattern); // true
+```
+
+#### Extração de Substrings
+```csharp
+string pattern = @"\d+";
+string input = "There are 123 apples.";
+Match match = Regex.Match(input, pattern);
+if (match.Success)
+{
+    Console.WriteLine(match.Value); // Output: 123
+}
+```
+
+#### Substituição de Texto
+```csharp
+string pattern = @"\d";
+string replacement = "#";
+string input = "Phone: 123-456-7890";
+string result = Regex.Replace(input, pattern, replacement);
+Console.WriteLine(result); // Output: Phone: ###-###-####
+```
+
+#### Grupos e Captura
+```csharp
+string pattern = @"(\d{3})-(\d{3})-(\d{4})";
+string input = "Phone: 123-456-7890";
+Match match = Regex.Match(input, pattern);
+if (match.Success)
+{
+    Console.WriteLine(match.Groups[1].Value); // Output: 123
+    Console.WriteLine(match.Groups[2].Value); // Output: 456
+    Console.WriteLine(match.Groups[3].Value); // Output: 7890
+}
+```
+
+### Aplicações Comuns
+
+- **Validação de Formatos**: Verificar se um texto segue um formato específico, como e-mails, números de telefone, CEPs, etc.
+- **Busca e Extração**: Encontrar e extrair partes específicas de um texto.
+- **Substituição de Texto**: Alterar ou formatar partes de uma string.
+- **Divisão de Strings**: Dividir strings em substrings com base em padrões específicos.
+
+### Considerações Finais
+
+Embora poderosas, as expressões regulares podem ser complexas e difíceis de ler, especialmente à medida que os padrões se tornam mais sofisticados. É importante usar ferramentas e testar suas expressões regulares para garantir que funcionem conforme o esperado. Existem também várias bibliotecas e ferramentas online que podem ajudar a construir e testar regex, como regex101.com e RegExr.
