@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StringsStudy")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e80a7c77748970e3ca89a7cc90e3973efbe18a0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aee53f2c85fe8f1547ffe76f940d47f6a9379ec3")]
 [assembly: System.Reflection.AssemblyProductAttribute("StringsStudy")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StringsStudy")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

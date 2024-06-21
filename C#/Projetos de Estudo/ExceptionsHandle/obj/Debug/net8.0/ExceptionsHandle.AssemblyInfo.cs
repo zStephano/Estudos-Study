@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("TwoPointersAndReverse")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("ExceptionsHandle")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aee53f2c85fe8f1547ffe76f940d47f6a9379ec3")]
-[assembly: System.Reflection.AssemblyProductAttribute("TwoPointersAndReverse")]
-[assembly: System.Reflection.AssemblyTitleAttribute("TwoPointersAndReverse")]
+[assembly: System.Reflection.AssemblyProductAttribute("ExceptionsHandle")]
+[assembly: System.Reflection.AssemblyTitleAttribute("ExceptionsHandle")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.
