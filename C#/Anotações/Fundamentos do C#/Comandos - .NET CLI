@@ -1,0 +1,200 @@
+O `.NET CLI` (Command-Line Interface) é uma ferramenta multiplataforma usada para desenvolvimento em .NET. A CLI fornece comandos para a criação, compilação, publicação e execução de aplicações .NET. Aqui está uma lista abrangente de comandos do `dotnet` e seus subcomandos mais usados:
+
+### Comandos Básicos
+
+- **`dotnet new`**: Cria um novo projeto ou arquivo de configuração.
+  ```sh
+  dotnet new console -o MyConsoleApp
+  dotnet new webapi -o MyWebApi
+  dotnet new mvc -o MyMvcApp
+  dotnet new classlib -o MyClassLibrary
+  ```
+
+- **`dotnet build`**: Compila o projeto.
+  ```sh
+  dotnet build
+  dotnet build MySolution.sln
+  ```
+
+- **`dotnet run`**: Compila e executa o projeto de aplicação.
+  ```sh
+  dotnet run
+  ```
+
+- **`dotnet test`**: Executa testes usando um test runner configurado.
+  ```sh
+  dotnet test
+  ```
+
+- **`dotnet publish`**: Publica o aplicativo e suas dependências para um diretório.
+  ```sh
+  dotnet publish -c Release -o ./publish
+  ```
+
+- **`dotnet restore`**: Restaura as dependências e ferramentas de um projeto.
+  ```sh
+  dotnet restore
+  ```
+
+- **`dotnet clean`**: Limpa a saída de compilação.
+  ```sh
+  dotnet clean
+  ```
+
+### Comandos de Gerenciamento de Pacotes
+
+- **`dotnet add package`**: Adiciona um pacote NuGet a um projeto.
+  ```sh
+  dotnet add package Newtonsoft.Json
+  ```
+
+- **`dotnet remove package`**: Remove um pacote NuGet de um projeto.
+  ```sh
+  dotnet remove package Newtonsoft.Json
+  ```
+
+- **`dotnet list package`**: Lista os pacotes NuGet instalados em um projeto.
+  ```sh
+  dotnet list package
+  ```
+
+### Comandos de Solução
+
+- **`dotnet new sln`**: Cria uma nova solução.
+  ```sh
+  dotnet new sln -o MySolution
+  ```
+
+- **`dotnet sln add`**: Adiciona um projeto à solução.
+  ```sh
+  dotnet sln MySolution.sln add MyProject/MyProject.csproj
+  ```
+
+- **`dotnet sln remove`**: Remove um projeto da solução.
+  ```sh
+  dotnet sln MySolution.sln remove MyProject/MyProject.csproj
+  ```
+
+- **`dotnet sln list`**: Lista todos os projetos em uma solução.
+  ```sh
+  dotnet sln MySolution.sln list
+  ```
+
+### Comandos de Ferramentas Globais
+
+- **`dotnet tool install`**: Instala uma ferramenta global ou local.
+  ```sh
+  dotnet tool install -g dotnetsay
+  ```
+
+- **`dotnet tool update`**: Atualiza uma ferramenta global ou local.
+  ```sh
+  dotnet tool update -g dotnetsay
+  ```
+
+- **`dotnet tool uninstall`**: Desinstala uma ferramenta global ou local.
+  ```sh
+  dotnet tool uninstall -g dotnetsay
+  ```
+
+- **`dotnet tool list`**: Lista ferramentas globais ou locais instaladas.
+  ```sh
+  dotnet tool list -g
+  ```
+
+### Comandos de Projeto
+
+- **`dotnet add reference`**: Adiciona uma referência a outro projeto.
+  ```sh
+  dotnet add reference ../MyOtherProject/MyOtherProject.csproj
+  ```
+
+- **`dotnet remove reference`**: Remove uma referência de outro projeto.
+  ```sh
+  dotnet remove reference ../MyOtherProject/MyOtherProject.csproj
+  ```
+
+- **`dotnet list reference`**: Lista todas as referências de projeto.
+  ```sh
+  dotnet list reference
+  ```
+
+### Comandos de Informações
+
+- **`dotnet --info`**: Exibe informações sobre o ambiente .NET instalado.
+  ```sh
+  dotnet --info
+  ```
+
+- **`dotnet --version`**: Exibe a versão do SDK .NET instalado.
+  ```sh
+  dotnet --version
+  ```
+
+### Comandos de Monitoramento e Diagnóstico
+
+- **`dotnet watch`**: Observa as alterações em arquivos de código-fonte e reinicia o comando especificado.
+  ```sh
+  dotnet watch run
+  dotnet watch test
+  ```
+
+- **`dotnet trace`**: Coleta rastreamento de diagnóstico de um aplicativo em execução.
+  ```sh
+  dotnet trace collect --process-id <PID>
+  ```
+
+- **`dotnet dump`**: Coleta e analisa dump de memória.
+  ```sh
+  dotnet dump collect --process-id <PID>
+  dotnet dump analyze
+  ```
+
+- **`dotnet-counters`**: Coleta métricas de desempenho de contadores de desempenho .NET em tempo real.
+  ```sh
+  dotnet-counters monitor --process-id <PID>
+  ```
+
+### Outros Comandos Úteis
+
+- **`dotnet format`**: Formata o código-fonte conforme as convenções de estilo.
+  ```sh
+  dotnet format
+  ```
+
+- **`dotnet migrate`**: Migra um projeto do formato de projeto .NET Core Preview 2 para .NET Core.
+  ```sh
+  dotnet migrate
+  ```
+
+### Exemplos de Uso
+
+#### Criando e Executando um Projeto Console
+
+```sh
+dotnet new console -o MyConsoleApp
+cd MyConsoleApp
+dotnet run
+```
+
+#### Adicionando uma Referência de Projeto
+
+```sh
+dotnet new classlib -o MyClassLibrary
+cd MyConsoleApp
+dotnet add reference ../MyClassLibrary/MyClassLibrary.csproj
+```
+
+#### Adicionando um Pacote NuGet
+
+```sh
+dotnet add package Newtonsoft.Json
+```
+
+#### Publicando um Projeto
+
+```sh
+dotnet publish -c Release -o ./publish
+```
+
+Esta lista cobre os comandos mais comuns e usados frequentemente com o `dotnet CLI`. Há mais opções e parâmetros disponíveis para cada comando, que podem ser explorados em detalhes na [documentação oficial do .NET CLI](https://docs.microsoft.com/dotnet/core/tools/).

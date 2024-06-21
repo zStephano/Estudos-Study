@@ -1,0 +1,15 @@
+C:\dev\Estudos\C#\Projetos de Estudo\DateHandle\bin\Debug\net8.0\DateHandle.exe
+C:\dev\Estudos\C#\Projetos de Estudo\DateHandle\bin\Debug\net8.0\DateHandle.deps.json
+C:\dev\Estudos\C#\Projetos de Estudo\DateHandle\bin\Debug\net8.0\DateHandle.runtimeconfig.json
+C:\dev\Estudos\C#\Projetos de Estudo\DateHandle\bin\Debug\net8.0\DateHandle.dll
+C:\dev\Estudos\C#\Projetos de Estudo\DateHandle\bin\Debug\net8.0\DateHandle.pdb
+C:\dev\Estudos\C#\Projetos de Estudo\DateHandle\obj\Debug\net8.0\DateHandle.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\Estudos\C#\Projetos de Estudo\DateHandle\obj\Debug\net8.0\DateHandle.AssemblyInfoInputs.cache
+C:\dev\Estudos\C#\Projetos de Estudo\DateHandle\obj\Debug\net8.0\DateHandle.AssemblyInfo.cs
+C:\dev\Estudos\C#\Projetos de Estudo\DateHandle\obj\Debug\net8.0\DateHandle.csproj.CoreCompileInputs.cache
+C:\dev\Estudos\C#\Projetos de Estudo\DateHandle\obj\Debug\net8.0\DateHandle.sourcelink.json
+C:\dev\Estudos\C#\Projetos de Estudo\DateHandle\obj\Debug\net8.0\DateHandle.dll
+C:\dev\Estudos\C#\Projetos de Estudo\DateHandle\obj\Debug\net8.0\refint\DateHandle.dll
+C:\dev\Estudos\C#\Projetos de Estudo\DateHandle\obj\Debug\net8.0\DateHandle.pdb
+C:\dev\Estudos\C#\Projetos de Estudo\DateHandle\obj\Debug\net8.0\DateHandle.genruntimeconfig.cache
+C:\dev\Estudos\C#\Projetos de Estudo\DateHandle\obj\Debug\net8.0\ref\DateHandle.dll

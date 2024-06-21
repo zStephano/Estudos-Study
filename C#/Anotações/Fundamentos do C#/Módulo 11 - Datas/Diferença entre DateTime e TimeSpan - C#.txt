@@ -1,0 +1,73 @@
+As estruturas `DateTime` e `TimeSpan` em C# são frequentemente usadas juntas, mas têm finalidades distintas e representam conceitos diferentes:
+
+### DateTime
+
+- **Propósito**: Representa um ponto específico no tempo.
+- **Uso**: Para armazenar e manipular datas e horários (ex. data de nascimento, data de um evento, data e hora atuais).
+- **Componentes**: Ano, mês, dia, hora, minuto, segundo e fração de segundo.
+- **Propriedades e Métodos Comuns**:
+  - `Year`, `Month`, `Day`, `Hour`, `Minute`, `Second`, `Millisecond`
+  - `DayOfWeek`, `DayOfYear`
+  - `AddDays`, `AddHours`, `AddMinutes`, `AddSeconds`, `AddMilliseconds`
+  - `ToString`, `ToShortDateString`, `ToShortTimeString`, `ToLongDateString`, `ToLongTimeString`
+
+**Exemplo**:
+```csharp
+DateTime now = DateTime.Now;
+DateTime specificDate = new DateTime(2023, 6, 20, 14, 30, 0);
+
+Console.WriteLine("Current Date and Time: " + now);
+Console.WriteLine("Specific Date and Time: " + specificDate);
+```
+
+### TimeSpan
+
+- **Propósito**: Representa um intervalo de tempo ou duração.
+- **Uso**: Para medir a duração entre dois pontos no tempo, ou para representar uma quantidade específica de tempo (ex. duração de uma viagem, intervalo de tempo entre dois eventos).
+- **Componentes**: Dias, horas, minutos, segundos e fração de segundo.
+- **Propriedades e Métodos Comuns**:
+  - `Days`, `Hours`, `Minutes`, `Seconds`, `Milliseconds`
+  - `TotalDays`, `TotalHours`, `TotalMinutes`, `TotalSeconds`, `TotalMilliseconds`
+  - `Add`, `Subtract`
+  - `FromDays`, `FromHours`, `FromMinutes`, `FromSeconds`, `FromMilliseconds`
+
+**Exemplo**:
+```csharp
+TimeSpan duration = new TimeSpan(1, 30, 0); // 1 hora e 30 minutos
+TimeSpan fromHours = TimeSpan.FromHours(1.5); // 1 hora e meia
+
+Console.WriteLine("Duration: " + duration);
+Console.WriteLine("From Hours: " + fromHours);
+```
+
+### Diferenças Principais
+
+- **Natureza**:
+  - `DateTime` é um ponto específico no tempo.
+  - `TimeSpan` é um intervalo ou duração entre pontos no tempo.
+  
+- **Operações**:
+  - Você pode adicionar ou subtrair um `TimeSpan` de um `DateTime` para obter um novo `DateTime`.
+  - Você pode subtrair um `DateTime` de outro `DateTime` para obter um `TimeSpan`.
+
+**Exemplo de uso conjunto**:
+```csharp
+DateTime startTime = new DateTime(2023, 6, 20, 14, 30, 0);
+DateTime endTime = new DateTime(2023, 6, 20, 16, 0, 0);
+
+// Calcular a duração entre duas datas
+TimeSpan duration = endTime - startTime;
+Console.WriteLine("Duration between startTime and endTime: " + duration);
+
+// Adicionar uma duração a uma data
+DateTime newEndTime = startTime + duration;
+Console.WriteLine("New End Time: " + newEndTime);
+```
+
+Neste exemplo, `duration` representa a diferença entre `endTime` e `startTime`. Adicionando essa `duration` ao `startTime`, obtemos `newEndTime`, que deve ser igual ao `endTime` original.
+
+### Resumo
+
+- Use `DateTime` para representar datas e horas específicas.
+- Use `TimeSpan` para representar durações ou intervalos de tempo.
+- Combine os dois para calcular diferenças entre datas e para adicionar ou subtrair durações de datas específicas.

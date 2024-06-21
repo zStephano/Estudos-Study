@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextEditor", "TextEditor\Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringsStudy", "StringsStudy\StringsStudy.csproj", "{60A609AA-0040-4491-94B7-70C87848CE26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTMLEditor", "HTMLEditor\HTMLEditor.csproj", "{AB15A70E-D00C-4150-8CE5-32E9D2DB1543}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HTMLEditor", "HTMLEditor\HTMLEditor.csproj", "{AB15A70E-D00C-4150-8CE5-32E9D2DB1543}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateHandle", "DateHandle\DateHandle.csproj", "{17D38292-6C6D-4C5D-A6BF-C31849AAAB94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{AB15A70E-D00C-4150-8CE5-32E9D2DB1543}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB15A70E-D00C-4150-8CE5-32E9D2DB1543}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB15A70E-D00C-4150-8CE5-32E9D2DB1543}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17D38292-6C6D-4C5D-A6BF-C31849AAAB94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17D38292-6C6D-4C5D-A6BF-C31849AAAB94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17D38292-6C6D-4C5D-A6BF-C31849AAAB94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17D38292-6C6D-4C5D-A6BF-C31849AAAB94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

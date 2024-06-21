@@ -1,0 +1,198 @@
+Em C#, o trabalho com datas e horas é facilitado pelas estruturas `DateTime`, `DateTimeOffset`, `TimeSpan` e outras classes no namespace `System`. Aqui está um resumo de como você pode trabalhar com datas em C#:
+
+### DateTime
+
+A estrutura `DateTime` representa uma data e hora.
+
+#### Criação de DateTime
+
+Você pode criar uma instância de `DateTime` de várias maneiras:
+
+```csharp
+DateTime now = DateTime.Now; // Data e hora atual no fuso horário local
+DateTime utcNow = DateTime.UtcNow; // Data e hora atual em UTC
+DateTime specificDate = new DateTime(2023, 6, 20, 14, 30, 0); // 20 de Junho de 2023 às 14:30:00
+```
+
+#### Propriedades Comuns
+
+- **Year, Month, Day**: Obtêm a parte do ano, mês e dia da data.
+- **Hour, Minute, Second**: Obtêm a parte da hora, minuto e segundo da data.
+- **DayOfWeek**: Obtém o dia da semana.
+- **DayOfYear**: Obtém o dia do ano.
+
+```csharp
+DateTime now = DateTime.Now;
+int year = now.Year;
+int month = now.Month;
+int day = now.Day;
+DayOfWeek dayOfWeek = now.DayOfWeek;
+```
+
+#### Formatação de Datas
+
+Você pode formatar datas usando o método `ToString` com especificadores de formato:
+
+```csharp
+DateTime now = DateTime.Now;
+string formattedDate = now.ToString("yyyy-MM-dd HH:mm:ss"); // Formato: 2023-06-20 14:30:00
+string shortDate = now.ToString("d"); // Formato curto: 20/06/2023 (depende da cultura)
+string longDate = now.ToString("D"); // Formato longo: terça-feira, 20 de junho de 2023 (depende da cultura)
+```
+
+### Operações com DateTime
+
+#### Adição e Subtração de Tempo
+
+Você pode adicionar ou subtrair tempo usando métodos como `AddDays`, `AddHours`, `AddMinutes`, etc.:
+
+```csharp
+DateTime now = DateTime.Now;
+DateTime tomorrow = now.AddDays(1);
+DateTime nextHour = now.AddHours(1);
+DateTime lastWeek = now.AddDays(-7);
+```
+
+#### Diferença entre Datas
+
+Para calcular a diferença entre duas datas, você pode usar o operador `-` que retorna um `TimeSpan`:
+
+```csharp
+DateTime startDate = new DateTime(2023, 1, 1);
+DateTime endDate = new DateTime(2023, 6, 20);
+TimeSpan difference = endDate - startDate;
+int days = difference.Days; // Total de dias entre as datas
+```
+
+### TimeSpan
+
+A estrutura `TimeSpan` representa um intervalo de tempo.
+
+#### Criação de TimeSpan
+
+Você pode criar uma instância de `TimeSpan` de várias maneiras:
+
+```csharp
+TimeSpan duration = new TimeSpan(1, 30, 0); // 1 hora, 30 minutos, 0 segundos
+TimeSpan fromHours = TimeSpan.FromHours(1.5); // 1 hora e meia
+```
+
+#### Propriedades Comuns
+
+- **Days, Hours, Minutes, Seconds, Milliseconds**: Obtêm as partes do intervalo de tempo.
+- **TotalDays, TotalHours, TotalMinutes, TotalSeconds**: Obtêm o total do intervalo em dias, horas, minutos, segundos, etc.
+
+```csharp
+TimeSpan duration = new TimeSpan(1, 30, 0);
+int hours = duration.Hours;
+double totalHours = duration.TotalHours;
+```
+
+#### Operações com TimeSpan
+
+Você pode adicionar ou subtrair `TimeSpan` de um `DateTime`, e também somar ou subtrair `TimeSpan`:
+
+```csharp
+DateTime now = DateTime.Now;
+TimeSpan oneHour = TimeSpan.FromHours(1);
+
+DateTime oneHourLater = now + oneHour;
+TimeSpan duration = oneHourLater - now;
+```
+
+### DateTimeOffset
+
+A estrutura `DateTimeOffset` é semelhante a `DateTime`, mas inclui um deslocamento de fuso horário.
+
+#### Criação de DateTimeOffset
+
+Você pode criar uma instância de `DateTimeOffset` de várias maneiras:
+
+```csharp
+DateTimeOffset now = DateTimeOffset.Now; // Data e hora atual com o deslocamento local
+DateTimeOffset utcNow = DateTimeOffset.UtcNow; // Data e hora atual em UTC
+DateTimeOffset specificDate = new DateTimeOffset(2023, 6, 20, 14, 30, 0, TimeSpan.FromHours(-3)); // Com fuso horário -3
+```
+
+### Exemplos Completos
+
+Aqui está um exemplo completo que demonstra várias operações com datas em C#:
+
+```csharp
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Criação de DateTime
+        DateTime now = DateTime.Now;
+        DateTime utcNow = DateTime.UtcNow;
+        DateTime specificDate = new DateTime(2023, 6, 20, 14, 30, 0);
+
+        // Propriedades
+        int year = now.Year;
+        int month = now.Month;
+        int day = now.Day;
+        DayOfWeek dayOfWeek = now.DayOfWeek;
+
+        // Formatação
+        string formattedDate = now.ToString("yyyy-MM-dd HH:mm:ss");
+        string shortDate = now.ToString("d");
+        string longDate = now.ToString("D");
+
+        // Adição e Subtração de Tempo
+        DateTime tomorrow = now.AddDays(1);
+        DateTime nextHour = now.AddHours(1);
+        DateTime lastWeek = now.AddDays(-7);
+
+        // Diferença entre Datas
+        DateTime startDate = new DateTime(2023, 1, 1);
+        DateTime endDate = new DateTime(2023, 6, 20);
+        TimeSpan difference = endDate - startDate;
+        int days = difference.Days;
+
+        // Criação de TimeSpan
+        TimeSpan duration = new TimeSpan(1, 30, 0);
+        TimeSpan fromHours = TimeSpan.FromHours(1.5);
+
+        // Propriedades de TimeSpan
+        int hours = duration.Hours;
+        double totalHours = duration.TotalHours;
+
+        // Operações com TimeSpan
+        DateTime oneHourLater = now + TimeSpan.FromHours(1);
+        TimeSpan durationBetween = oneHourLater - now;
+
+        // Uso de DateTimeOffset
+        DateTimeOffset nowOffset = DateTimeOffset.Now;
+        DateTimeOffset utcNowOffset = DateTimeOffset.UtcNow;
+        DateTimeOffset specificOffsetDate = new DateTimeOffset(2023, 6, 20, 14, 30, 0, TimeSpan.FromHours(-3));
+
+        // Exibição dos Resultados
+        Console.WriteLine("Now: " + now);
+        Console.WriteLine("UTC Now: " + utcNow);
+        Console.WriteLine("Specific Date: " + specificDate);
+        Console.WriteLine("Year: " + year);
+        Console.WriteLine("Month: " + month);
+        Console.WriteLine("Day: " + day);
+        Console.WriteLine("Day of Week: " + dayOfWeek);
+        Console.WriteLine("Formatted Date: " + formattedDate);
+        Console.WriteLine("Short Date: " + shortDate);
+        Console.WriteLine("Long Date: " + longDate);
+        Console.WriteLine("Tomorrow: " + tomorrow);
+        Console.WriteLine("Next Hour: " + nextHour);
+        Console.WriteLine("Last Week: " + lastWeek);
+        Console.WriteLine("Difference in Days: " + days);
+        Console.WriteLine("Duration (Hours): " + hours);
+        Console.WriteLine("Total Hours: " + totalHours);
+        Console.WriteLine("One Hour Later: " + oneHourLater);
+        Console.WriteLine("Duration Between: " + durationBetween);
+        Console.WriteLine("Now with Offset: " + nowOffset);
+        Console.WriteLine("UTC Now with Offset: " + utcNowOffset);
+        Console.WriteLine("Specific Date with Offset: " + specificOffsetDate);
+    }
+}
+```
+
+Este exemplo cobre as operações básicas e avançadas com datas em C#.

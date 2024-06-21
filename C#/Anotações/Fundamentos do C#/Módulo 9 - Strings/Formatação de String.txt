@@ -1,0 +1,155 @@
+A formatação de strings em C# é uma prática comum e essencial para exibir dados de maneira legível e organizada. Existem várias maneiras de formatar strings em C#, cada uma com suas próprias características e vantagens. Vamos explorar as principais técnicas de formatação de strings em C#:
+
+### Interpolação de Strings
+
+A interpolação de strings é uma forma moderna e intuitiva de formatar strings, introduzida no C# 6.0. Ela permite incluir expressões dentro de uma string, prefixando-a com o símbolo `$`.
+
+```csharp
+string name = "Alice";
+int age = 30;
+string message = $"Name: {name}, Age: {age}";
+Console.WriteLine(message);
+```
+
+#### Benefícios da Interpolação de Strings:
+- Fácil de ler e escrever.
+- Suporte para expressões complexas diretamente na string.
+- Tipo seguro, verificações de tipo em tempo de compilação.
+
+### Método `String.Format`
+
+O método `String.Format` é uma técnica mais antiga e flexível para formatar strings. Ele usa placeholders (`{}`) para inserir valores em uma string.
+
+```csharp
+string name = "Bob";
+int age = 25;
+string message = String.Format("Name: {0}, Age: {1}", name, age);
+Console.WriteLine(message);
+```
+
+#### Benefícios do `String.Format`:
+- Flexível e poderoso para formatação complexa.
+- Suporte para cultura (localização) e formatação de números, datas, etc.
+
+### Método `ToString` com Formatos
+
+O método `ToString` pode ser usado com especificadores de formato para converter tipos de dados em strings formatadas.
+
+```csharp
+DateTime now = DateTime.Now;
+string formattedDate = now.ToString("dd/MM/yyyy");
+Console.WriteLine(formattedDate);
+```
+
+#### Exemplos de Especificadores de Formato:
+- `C` para formato de moeda.
+- `D` para datas.
+- `N` para números com separadores de milhar.
+- `P` para percentuais.
+
+```csharp
+double price = 123.45;
+string formattedPrice = price.ToString("C");
+Console.WriteLine(formattedPrice); // Exemplo: $123.45 (dependendo da cultura)
+
+double percent = 0.1234;
+string formattedPercent = percent.ToString("P");
+Console.WriteLine(formattedPercent); // Exemplo: 12.34%
+```
+
+### Método `String.Concat`
+
+O método `String.Concat` concatena múltiplas strings em uma única string. É útil para operações simples de concatenação.
+
+```csharp
+string firstName = "John";
+string lastName = "Doe";
+string fullName = String.Concat(firstName, " ", lastName);
+Console.WriteLine(fullName);
+```
+
+### Método `String.Join`
+
+O método `String.Join` concatena elementos de uma coleção, separando-os com um delimitador.
+
+```csharp
+string[] words = { "apple", "banana", "cherry" };
+string sentence = String.Join(", ", words);
+Console.WriteLine(sentence); // "apple, banana, cherry"
+```
+
+### StringBuilder
+
+A classe `StringBuilder` é útil para construir strings de maneira eficiente quando se realiza muitas operações de concatenação.
+
+```csharp
+using System.Text;
+
+StringBuilder sb = new StringBuilder();
+sb.Append("Hello");
+sb.Append(" ");
+sb.Append("World");
+string result = sb.ToString();
+Console.WriteLine(result); // "Hello World"
+```
+
+### Exemplo Completo
+
+Aqui está um exemplo que demonstra várias técnicas de formatação de strings:
+
+```csharp
+using System;
+using System.Text;
+
+class Program
+{
+    static void Main()
+    {
+        // Interpolação de Strings
+        string name = "Alice";
+        int age = 30;
+        string interpolated = $"Name: {name}, Age: {age}";
+        Console.WriteLine(interpolated);
+
+        // String.Format
+        string formatted = String.Format("Name: {0}, Age: {1}", name, age);
+        Console.WriteLine(formatted);
+
+        // ToString com Formatos
+        DateTime now = DateTime.Now;
+        string dateFormatted = now.ToString("dd/MM/yyyy");
+        Console.WriteLine(dateFormatted);
+
+        double price = 123.45;
+        string priceFormatted = price.ToString("C");
+        Console.WriteLine(priceFormatted);
+
+        // String.Concat
+        string fullName = String.Concat(name, " Johnson");
+        Console.WriteLine(fullName);
+
+        // String.Join
+        string[] fruits = { "apple", "banana", "cherry" };
+        string fruitList = String.Join(", ", fruits);
+        Console.WriteLine(fruitList);
+
+        // StringBuilder
+        StringBuilder sb = new StringBuilder();
+        sb.Append("Hello");
+        sb.Append(" ");
+        sb.Append("World");
+        string result = sb.ToString();
+        Console.WriteLine(result);
+    }
+}
+```
+
+### Resumo
+
+- **Interpolação de Strings (`$`)**: Intuitiva e poderosa, ideal para a maioria dos casos.
+- **String.Format**: Flexível e adequado para formatação complexa.
+- **ToString com Formatos**: Útil para tipos de dados específicos.
+- **String.Concat e String.Join**: Simples para concatenação de strings.
+- **StringBuilder**: Eficiente para construção de strings com muitas concatenações.
+
+Escolher a técnica certa depende do contexto e das necessidades específicas de formatação.
