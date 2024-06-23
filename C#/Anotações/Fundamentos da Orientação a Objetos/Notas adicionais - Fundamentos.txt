@@ -818,7 +818,7 @@ Os genéricos são uma ferramenta poderosa para criar código flexível e eficie
 
 ------------------------------------
 
-# Listas
+# Listas:
 
 Em **C#**, as **listas** são frequentemente usadas para armazenar coleções de elementos. Vamos explorar como trabalhar com listas em programação orientada a objetos:
 
@@ -874,5 +874,7 @@ Em **C#**, as **listas** são frequentemente usadas para armazenar coleções de
      ```
 
 As listas são flexíveis e úteis para armazenar e manipular conjuntos dinâmicos de dados em C#.
+
+Docoumento auxiliar: https://learn.microsoft.com/pt-br/dotnet/api/system.collections.generic.list-1?view=net-8.0
 
 ------------------------------------

@@ -1,0 +1,172 @@
+Em C#, a classe `List<T>` do namespace `System.Collections.Generic` é uma coleção de objetos que podem ser acessados por índice e fornece métodos para realizar operações comuns em listas. Abaixo está uma lista dos métodos mais comuns disponíveis para a classe `List<T>`:
+
+### Propriedades
+
+- **Capacity**: Obtém ou define o número de elementos que a `List<T>` pode conter.
+- **Count**: Obtém o número de elementos realmente contidos na `List<T>`.
+
+### Métodos
+
+#### Adição de Elementos
+
+- **Add(T item)**: Adiciona um objeto ao final da `List<T>`.
+- **AddRange(IEnumerable<T> collection)**: Adiciona os elementos da coleção especificada ao final da `List<T>`.
+
+#### Inserção de Elementos
+
+- **Insert(int index, T item)**: Insere um elemento na `List<T>` na posição especificada.
+- **InsertRange(int index, IEnumerable<T> collection)**: Insere os elementos de uma coleção na `List<T>` começando na posição especificada.
+
+#### Remoção de Elementos
+
+- **Remove(T item)**: Remove a primeira ocorrência de um objeto específico da `List<T>`.
+- **RemoveAt(int index)**: Remove o elemento no índice especificado da `List<T>`.
+- **RemoveAll(Predicate<T> match)**: Remove todos os elementos que correspondem aos critérios definidos pelo predicado especificado.
+- **RemoveRange(int index, int count)**: Remove uma faixa de elementos da `List<T>`.
+
+#### Pesquisa de Elementos
+
+- **Contains(T item)**: Determina se um elemento está na `List<T>`.
+- **Find(Predicate<T> match)**: Pesquisa um elemento que corresponda aos critérios definidos por um predicado especificado e retorna o primeiro achado.
+- **FindAll(Predicate<T> match)**: Recupera todos os elementos que correspondem aos critérios definidos por um predicado especificado.
+- **FindIndex(Predicate<T> match)**: Pesquisa um elemento que corresponda aos critérios definidos por um predicado especificado e retorna o índice da primeira ocorrência.
+- **FindLast(Predicate<T> match)**: Pesquisa um elemento que corresponda aos critérios definidos por um predicado especificado e retorna a última ocorrência.
+- **FindLastIndex(Predicate<T> match)**: Pesquisa um elemento que corresponda aos critérios definidos por um predicado especificado e retorna o índice da última ocorrência.
+- **IndexOf(T item)**: Retorna o índice da primeira ocorrência de um valor na `List<T>`.
+- **LastIndexOf(T item)**: Retorna o índice da última ocorrência de um valor na `List<T>`.
+
+#### Ordenação de Elementos
+
+- **Sort()**: Ordena os elementos da `List<T>` usando a ordem natural dos elementos (o tipo `T` deve implementar `IComparable<T>`).
+- **Sort(Comparison<T> comparison)**: Ordena os elementos da `List<T>` usando o método de comparação especificado.
+- **Sort(IComparer<T> comparer)**: Ordena os elementos da `List<T>` usando o comparador especificado.
+- **Sort(int index, int count, IComparer<T> comparer)**: Ordena os elementos em uma faixa da `List<T>` usando o comparador especificado.
+
+#### Outras Operações
+
+- **Clear()**: Remove todos os elementos da `List<T>`.
+- **CopyTo(T[] array)**: Copia a `List<T>` ou uma parte dela para um array.
+- **Exists(Predicate<T> match)**: Determina se a `List<T>` contém elementos que correspondem aos critérios definidos por um predicado especificado.
+- **ForEach(Action<T> action)**: Executa a ação especificada para cada elemento da `List<T>`.
+- **GetRange(int index, int count)**: Cria uma cópia superficial de uma faixa de elementos na `List<T>`.
+- **ToArray()**: Copia os elementos da `List<T>` para um novo array.
+- **TrimExcess()**: Define a capacidade da `List<T>` para o número atual de elementos nela, se esse número for menos de um limite determinado.
+
+Esses são os métodos mais utilizados na classe `List<T>` em C#. A classe `List<T>` é bastante versátil e fornece métodos convenientes para a manipulação de listas de objetos.
+
+-----------------------------------
+
+Em C#, além da `List<T>` do namespace `System.Collections.Generic`, existem várias outras implementações de listas, cada uma adequada para diferentes cenários e necessidades. Abaixo está uma visão geral dos tipos mais comuns de listas e suas características:
+
+### `List<T>`
+
+- **Namespace**: `System.Collections.Generic`
+- **Descrição**: Representa uma lista fortemente tipada de objetos que podem ser acessados por índice. Oferece métodos para pesquisar, classificar e manipular listas.
+- **Exemplo**:
+  ```csharp
+  List<int> numbers = new List<int>();
+  numbers.Add(1);
+  numbers.Add(2);
+  ```
+
+### `ArrayList`
+
+- **Namespace**: `System.Collections`
+- **Descrição**: Representa uma coleção de objetos cujo tamanho pode aumentar dinamicamente. Não é fortemente tipada, permitindo a adição de qualquer tipo de objeto.
+- **Exemplo**:
+  ```csharp
+  ArrayList list = new ArrayList();
+  list.Add(1);
+  list.Add("hello");
+  ```
+
+### `LinkedList<T>`
+
+- **Namespace**: `System.Collections.Generic`
+- **Descrição**: Representa uma lista duplamente encadeada de objetos. Útil para cenários onde inserções e remoções frequentes ocorrem em ambas as extremidades da lista.
+- **Exemplo**:
+  ```csharp
+  LinkedList<string> linkedList = new LinkedList<string>();
+  linkedList.AddLast("first");
+  linkedList.AddLast("second");
+  ```
+
+### `Queue<T>`
+
+- **Namespace**: `System.Collections.Generic`
+- **Descrição**: Representa uma coleção FIFO (First-In, First-Out). Útil para cenários onde você precisa processar itens na ordem em que foram adicionados.
+- **Exemplo**:
+  ```csharp
+  Queue<int> queue = new Queue<int>();
+  queue.Enqueue(1);
+  queue.Enqueue(2);
+  int first = queue.Dequeue();
+  ```
+
+### `Stack<T>`
+
+- **Namespace**: `System.Collections.Generic`
+- **Descrição**: Representa uma coleção LIFO (Last-In, First-Out). Útil para cenários onde você precisa processar itens na ordem inversa em que foram adicionados.
+- **Exemplo**:
+  ```csharp
+  Stack<int> stack = new Stack<int>();
+  stack.Push(1);
+  stack.Push(2);
+  int last = stack.Pop();
+  ```
+
+### `HashSet<T>`
+
+- **Namespace**: `System.Collections.Generic`
+- **Descrição**: Representa uma coleção de elementos que são únicos. Útil para cenários onde a unicidade dos elementos é importante.
+- **Exemplo**:
+  ```csharp
+  HashSet<int> hashSet = new HashSet<int>();
+  hashSet.Add(1);
+  hashSet.Add(2);
+  ```
+
+### `SortedList<TKey, TValue>`
+
+- **Namespace**: `System.Collections.Generic`
+- **Descrição**: Representa uma coleção de pares chave/valor que são classificados pela chave. Útil para cenários onde a ordem dos elementos é importante.
+- **Exemplo**:
+  ```csharp
+  SortedList<int, string> sortedList = new SortedList<int, string>();
+  sortedList.Add(1, "one");
+  sortedList.Add(2, "two");
+  ```
+
+### `SortedSet<T>`
+
+- **Namespace**: `System.Collections.Generic`
+- **Descrição**: Representa uma coleção de elementos que são únicos e classificados. Combina as características de `HashSet<T>` e `SortedList<TKey, TValue>`.
+- **Exemplo**:
+  ```csharp
+  SortedSet<int> sortedSet = new SortedSet<int>();
+  sortedSet.Add(1);
+  sortedSet.Add(2);
+  ```
+
+### `ObservableCollection<T>`
+
+- **Namespace**: `System.Collections.ObjectModel`
+- **Descrição**: Representa uma coleção de dados que fornece notificações quando os itens são adicionados, removidos ou quando a lista é atualizada. Útil para data binding em interfaces de usuário.
+- **Exemplo**:
+  ```csharp
+  ObservableCollection<string> observableCollection = new ObservableCollection<string>();
+  observableCollection.CollectionChanged += (sender, e) => { /* handle changes */ };
+  observableCollection.Add("item1");
+  ```
+
+### `BindingList<T>`
+
+- **Namespace**: `System.ComponentModel`
+- **Descrição**: Similar ao `ObservableCollection<T>`, mas oferece suporte adicional para data binding em Windows Forms.
+- **Exemplo**:
+  ```csharp
+  BindingList<string> bindingList = new BindingList<string>();
+  bindingList.Add("item1");
+  ```
+
+Esses são os principais tipos de listas e coleções em C#. Cada tipo de lista tem seus próprios métodos e propriedades, que podem ser explorados na documentação oficial do .NET para mais detalhes específicos sobre suas funcionalidades e uso.
