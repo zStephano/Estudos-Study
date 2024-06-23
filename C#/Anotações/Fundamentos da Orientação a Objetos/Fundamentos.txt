@@ -1,0 +1,190 @@
+A orientação a objetos (OO) em C# segue os mesmos princípios fundamentais de outros paradigmas orientados a objetos, mas com sintaxe e características específicas da linguagem. Vamos explorar os fundamentos da orientação a objetos em C#:
+
+### 1. **Classes e Objetos**
+- **Classe**: Um modelo ou blueprint para criar objetos. Define atributos (campos) e métodos (comportamentos) que os objetos criados a partir da classe terão.
+- **Objeto**: Uma instância de uma classe. Um objeto contém valores específicos dos atributos definidos na classe.
+
+```csharp
+public class Animal
+{
+    public string Nome { get; set; }
+
+    public void Comer()
+    {
+        Console.WriteLine($"{Nome} está comendo.");
+    }
+}
+
+Animal cachorro = new Animal();
+cachorro.Nome = "Rex";
+cachorro.Comer();  // Output: Rex está comendo.
+```
+
+### 2. **Encapsulamento**
+- O encapsulamento é o princípio de esconder os detalhes internos de um objeto e expor apenas o que é necessário. Isso é feito através de modificadores de acesso (`public`, `private`, `protected`, etc.).
+- **Propriedades**: Em C#, utilizamos propriedades (`get` e `set`) para acessar e modificar os atributos privados de um objeto.
+
+```csharp
+public class Pessoa
+{
+    private int idade;
+
+    public int Idade
+    {
+        get { return idade; }
+        set
+        {
+            if (value > 0)
+                idade = value;
+        }
+    }
+}
+
+Pessoa pessoa = new Pessoa();
+pessoa.Idade = 25;
+Console.WriteLine(pessoa.Idade);  // Output: 25
+```
+
+### 3. **Herança**
+- A herança permite que uma classe (subclasse ou classe derivada) herde atributos e métodos de outra classe (superclasse ou classe base).
+
+```csharp
+public class Animal
+{
+    public string Nome { get; set; }
+    public void Comer() => Console.WriteLine($"{Nome} está comendo.");
+}
+
+public class Cachorro : Animal
+{
+    public void Latir() => Console.WriteLine($"{Nome} está latindo.");
+}
+
+Cachorro cachorro = new Cachorro();
+cachorro.Nome = "Rex";
+cachorro.Comer();  // Output: Rex está comendo.
+cachorro.Latir();  // Output: Rex está latindo.
+```
+
+### 4. **Polimorfismo**
+- O polimorfismo permite que objetos de diferentes classes sejam tratados como objetos da mesma classe base.
+
+```csharp
+public class Animal
+{
+    public string Nome { get; set; }
+    public virtual void FazerSom() => Console.WriteLine("Som de animal.");
+}
+
+public class Cachorro : Animal
+{
+    public override void FazerSom() => Console.WriteLine("Au au!");
+}
+
+public class Gato : Animal
+{
+    public override void FazerSom() => Console.WriteLine("Miau!");
+}
+
+List<Animal> animais = new List<Animal>
+{
+    new Cachorro { Nome = "Rex" },
+    new Gato { Nome = "Felix" }
+};
+
+foreach (Animal animal in animais)
+{
+    Console.WriteLine(animal.Nome);
+    animal.FazerSom();
+}
+// Output:
+// Rex
+// Au au!
+// Felix
+// Miau!
+```
+
+### 5. **Abstração**
+- A abstração envolve simplificar objetos complexos para representar seus aspectos essenciais sem incluir detalhes desnecessários. Isso é alcançado através de classes abstratas e interfaces.
+
+```csharp
+public abstract class Forma
+{
+    public abstract double CalcularArea();
+}
+
+public class Circulo : Forma
+{
+    public double Raio { get; set; }
+
+    public override double CalcularArea()
+    {
+        return Math.PI * Raio * Raio;
+    }
+}
+
+public class Retangulo : Forma
+{
+    public double Largura { get; set; }
+    public double Altura { get; set; }
+
+    public override double CalcularArea()
+    {
+        return Largura * Altura;
+    }
+}
+
+Forma circulo = new Circulo { Raio = 5 };
+Forma retangulo = new Retangulo { Largura = 4, Altura = 6 };
+
+Console.WriteLine(circulo.CalcularArea());  // Output: 78.53981633974483
+Console.WriteLine(retangulo.CalcularArea());  // Output: 24
+```
+
+### 6. **Composição**
+- A composição é uma forma de criar objetos complexos, onde um objeto é composto de outros objetos. Isso promove um relacionamento "tem-um".
+
+```csharp
+public class Motor
+{
+    public string Modelo { get; set; }
+}
+
+public class Carro
+{
+    public string Marca { get; set; }
+    public Motor Motor { get; set; }
+
+    public void ExibirInfo()
+    {
+        Console.WriteLine($"Carro: {Marca}, Motor: {Motor.Modelo}");
+    }
+}
+
+Motor motor = new Motor { Modelo = "V8" };
+Carro carro = new Carro { Marca = "Ford", Motor = motor };
+carro.ExibirInfo();  // Output: Carro: Ford, Motor: V8
+```
+
+### 7. **Mensagens e Métodos**
+- Em OO, os objetos comunicam-se entre si enviando mensagens, que são chamadas de métodos que um objeto faz para outro.
+
+```csharp
+public class Pessoa
+{
+    public string Nome { get; set; }
+
+    public void Cumprimentar(Pessoa outraPessoa)
+    {
+        Console.WriteLine($"{Nome} diz: Olá, {outraPessoa.Nome}!");
+    }
+}
+
+Pessoa pessoa1 = new Pessoa { Nome = "Alice" };
+Pessoa pessoa2 = new Pessoa { Nome = "Bob" };
+pessoa1.Cumprimentar(pessoa2);  // Output: Alice diz: Olá, Bob!
+```
+
+### Conclusão
+
+Os fundamentos da orientação a objetos em C# fornecem uma estrutura robusta para desenvolver software modular, reutilizável e fácil de manter. Com classes e objetos, encapsulamento, herança, polimorfismo, abstração e composição, você pode modelar e resolver problemas complexos de forma eficiente e eficaz.
