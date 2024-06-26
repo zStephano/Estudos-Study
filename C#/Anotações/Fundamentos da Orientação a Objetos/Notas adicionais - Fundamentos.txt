@@ -878,3 +878,112 @@ As listas são flexíveis e úteis para armazenar e manipular conjuntos dinâmic
 Docoumento auxiliar: https://learn.microsoft.com/pt-br/dotnet/api/system.collections.generic.list-1?view=net-8.0
 
 ------------------------------------
+
+# Construtores:
+
+Construtores em C# são métodos especiais utilizados para inicializar objetos de uma classe. Eles são chamados automaticamente quando um objeto da classe é criado. Existem diferentes tipos de construtores em C#, cada um com suas características específicas. Vamos explorar os principais:
+
+### 1. Construtor Padrão (Default Constructor)
+É um construtor que não possui parâmetros. Se nenhuma forma de construtor for definida na classe, o compilador fornece um construtor padrão vazio.
+
+```csharp
+public class Pessoa
+{
+    public string Nome;
+    public int Idade;
+
+    // Construtor padrão
+    public Pessoa()
+    {
+        Nome = "Desconhecido";
+        Idade = 0;
+    }
+}
+```
+
+### 2. Construtor Parametrizado (Parameterized Constructor)
+É um construtor que aceita argumentos, permitindo que valores específicos sejam passados durante a criação do objeto.
+
+```csharp
+public class Pessoa
+{
+    public string Nome;
+    public int Idade;
+
+    // Construtor parametrizado
+    public Pessoa(string nome, int idade)
+    {
+        Nome = nome;
+        Idade = idade;
+    }
+}
+```
+
+### 3. Construtor Estático (Static Constructor)
+É utilizado para inicializar dados estáticos ou para executar uma ação específica que precisa ser executada apenas uma vez. Não pode aceitar parâmetros e é chamado automaticamente antes que qualquer membro estático seja acessado.
+
+```csharp
+public class Pessoa
+{
+    public static int Contador;
+    
+    // Construtor estático
+    static Pessoa()
+    {
+        Contador = 0;
+    }
+
+    public Pessoa()
+    {
+        Contador++;
+    }
+}
+```
+
+### 4. Construtor de Cópia (Copy Constructor)
+Embora não seja uma funcionalidade nativa em C#, pode ser implementado para criar um novo objeto como uma cópia de um objeto existente.
+
+```csharp
+public class Pessoa
+{
+    public string Nome;
+    public int Idade;
+
+    // Construtor parametrizado
+    public Pessoa(string nome, int idade)
+    {
+        Nome = nome;
+        Idade = idade;
+    }
+
+    // Construtor de cópia
+    public Pessoa(Pessoa outraPessoa)
+    {
+        Nome = outraPessoa.Nome;
+        Idade = outraPessoa.Idade;
+    }
+}
+```
+
+### 5. Construtores com Inicialização de Objetos
+A partir do C# 3.0, é possível usar inicializadores de objetos para simplificar a inicialização dos mesmos sem a necessidade de vários construtores.
+
+```csharp
+public class Pessoa
+{
+    public string Nome { get; set; }
+    public int Idade { get; set; }
+}
+
+// Inicialização com inicializador de objetos
+Pessoa pessoa = new Pessoa { Nome = "João", Idade = 30 };
+```
+
+### Resumo
+- **Construtor Padrão**: Sem parâmetros, inicializa valores padrão.
+- **Construtor Parametrizado**: Aceita parâmetros para inicializar propriedades.
+- **Construtor Estático**: Inicializa membros estáticos, chamado uma vez automaticamente.
+- **Construtor de Cópia**: Cria um novo objeto como uma cópia de outro.
+- **Inicializador de Objetos**: Sintaxe simplificada para inicialização de objetos.
+
+Esses são os principais tipos de construtores em C#. Eles são fundamentais para garantir que os objetos sejam inicializados de maneira apropriada e eficiente.
