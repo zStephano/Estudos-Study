@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace OopStudy.ContentContext
 {
-    public abstract class Content
+    public abstract class Content : Base
     {
 
         public Content(string title,
             string url) 
         {
-            Id = Guid.NewGuid();
             Title = title;
             Url = url;
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OopStudy.ContentContext
 {
-    public class CareerItem
+    public class CareerItem : Base
     {
         public CareerItem(int order, 
             string title,

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OopStudy.NotificationContext
 {
-    public class Notification
+    public sealed class Notification
     {
         public Notification() 
         {
