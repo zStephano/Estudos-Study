@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OopStudy.NotificationContext;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,8 +15,7 @@ namespace OopStudy.ContentContext
             Course course)
         {
             if (course == null)
-                throw new System.Exception("O curso não pode ser nulo");
-
+                AddNotification(new Notification("Course", "Curso inválido"));
             Order = order;
             Title = title;
             Description = description;
