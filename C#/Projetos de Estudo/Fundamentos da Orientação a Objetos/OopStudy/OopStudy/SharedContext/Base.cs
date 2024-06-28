@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OopStudy.ContentContext
+namespace OopStudy.SharedContext
 {
     public abstract class Base : Notifiable
     {
-        public Base() 
+        public Base()
         {
             Id = Guid.NewGuid();
         }

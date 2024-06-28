@@ -1,0 +1,5 @@
+C:\dev\Estudos\C#\Projetos de Estudo\Fundamentos da Orientação a Objetos\OopStudy\OopStudy\obj\Debug\net8.0\OopStudy.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\Estudos\C#\Projetos de Estudo\Fundamentos da Orientação a Objetos\OopStudy\OopStudy\obj\Debug\net8.0\OopStudy.AssemblyInfoInputs.cache
+C:\dev\Estudos\C#\Projetos de Estudo\Fundamentos da Orientação a Objetos\OopStudy\OopStudy\obj\Debug\net8.0\OopStudy.AssemblyInfo.cs
+C:\dev\Estudos\C#\Projetos de Estudo\Fundamentos da Orientação a Objetos\OopStudy\OopStudy\obj\Debug\net8.0\OopStudy.csproj.CoreCompileInputs.cache
+C:\dev\Estudos\C#\Projetos de Estudo\Fundamentos da Orientação a Objetos\OopStudy\OopStudy\obj\Debug\net8.0\OopStudy.sourcelink.json
