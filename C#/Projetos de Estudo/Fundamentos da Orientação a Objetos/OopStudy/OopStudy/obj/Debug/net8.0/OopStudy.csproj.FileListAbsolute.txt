@@ -1,5 +1,15 @@
+C:\dev\Estudos\C#\Projetos de Estudo\Fundamentos da Orientação a Objetos\OopStudy\OopStudy\bin\Debug\net8.0\OopStudy.exe
+C:\dev\Estudos\C#\Projetos de Estudo\Fundamentos da Orientação a Objetos\OopStudy\OopStudy\bin\Debug\net8.0\OopStudy.deps.json
+C:\dev\Estudos\C#\Projetos de Estudo\Fundamentos da Orientação a Objetos\OopStudy\OopStudy\bin\Debug\net8.0\OopStudy.runtimeconfig.json
+C:\dev\Estudos\C#\Projetos de Estudo\Fundamentos da Orientação a Objetos\OopStudy\OopStudy\bin\Debug\net8.0\OopStudy.dll
+C:\dev\Estudos\C#\Projetos de Estudo\Fundamentos da Orientação a Objetos\OopStudy\OopStudy\bin\Debug\net8.0\OopStudy.pdb
 C:\dev\Estudos\C#\Projetos de Estudo\Fundamentos da Orientação a Objetos\OopStudy\OopStudy\obj\Debug\net8.0\OopStudy.GeneratedMSBuildEditorConfig.editorconfig
 C:\dev\Estudos\C#\Projetos de Estudo\Fundamentos da Orientação a Objetos\OopStudy\OopStudy\obj\Debug\net8.0\OopStudy.AssemblyInfoInputs.cache
 C:\dev\Estudos\C#\Projetos de Estudo\Fundamentos da Orientação a Objetos\OopStudy\OopStudy\obj\Debug\net8.0\OopStudy.AssemblyInfo.cs
 C:\dev\Estudos\C#\Projetos de Estudo\Fundamentos da Orientação a Objetos\OopStudy\OopStudy\obj\Debug\net8.0\OopStudy.csproj.CoreCompileInputs.cache
 C:\dev\Estudos\C#\Projetos de Estudo\Fundamentos da Orientação a Objetos\OopStudy\OopStudy\obj\Debug\net8.0\OopStudy.sourcelink.json
+C:\dev\Estudos\C#\Projetos de Estudo\Fundamentos da Orientação a Objetos\OopStudy\OopStudy\obj\Debug\net8.0\OopStudy.dll
+C:\dev\Estudos\C#\Projetos de Estudo\Fundamentos da Orientação a Objetos\OopStudy\OopStudy\obj\Debug\net8.0\refint\OopStudy.dll
+C:\dev\Estudos\C#\Projetos de Estudo\Fundamentos da Orientação a Objetos\OopStudy\OopStudy\obj\Debug\net8.0\OopStudy.pdb
+C:\dev\Estudos\C#\Projetos de Estudo\Fundamentos da Orientação a Objetos\OopStudy\OopStudy\obj\Debug\net8.0\OopStudy.genruntimeconfig.cache
+C:\dev\Estudos\C#\Projetos de Estudo\Fundamentos da Orientação a Objetos\OopStudy\OopStudy\obj\Debug\net8.0\ref\OopStudy.dll
