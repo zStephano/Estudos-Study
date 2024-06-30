@@ -1,0 +1,97 @@
+Aqui estão alguns dos principais comandos do Docker, organizados por categorias:
+
+### Comandos Básicos
+
+1. **docker --version**
+   - Verifica a versão instalada do Docker.
+
+2. **docker info**
+   - Exibe informações detalhadas sobre o Docker instalado e o sistema.
+
+3. **docker help**
+   - Exibe a ajuda geral do Docker ou ajuda específica de um comando.
+
+### Imagens
+
+1. **docker pull [imagem]**
+   - Baixa uma imagem do Docker Hub ou de outro repositório.
+
+2. **docker images**
+   - Lista todas as imagens locais.
+
+3. **docker rmi [imagem]**
+   - Remove uma ou mais imagens locais.
+
+4. **docker build -t [nome:tag] [caminho]**
+   - Cria uma imagem a partir de um Dockerfile no diretório especificado.
+
+### Containers
+
+1. **docker run [opções] [imagem] [comando]**
+   - Cria e inicia um novo container a partir de uma imagem.
+
+2. **docker ps**
+   - Lista todos os containers em execução.
+
+3. **docker ps -a**
+   - Lista todos os containers, incluindo os que estão parados.
+
+4. **docker stop [container]**
+   - Para um container em execução.
+
+5. **docker start [container]**
+   - Inicia um container parado.
+
+6. **docker restart [container]**
+   - Reinicia um container.
+
+7. **docker rm [container]**
+   - Remove um ou mais containers.
+
+8. **docker logs [container]**
+   - Exibe os logs de um container.
+
+9. **docker exec -it [container] [comando]**
+   - Executa um comando em um container em execução (por exemplo, acessar o shell do container: `docker exec -it [container] /bin/bash`).
+
+### Volumes
+
+1. **docker volume create [nome]**
+   - Cria um volume.
+
+2. **docker volume ls**
+   - Lista todos os volumes.
+
+3. **docker volume rm [volume]**
+   - Remove um volume.
+
+### Redes
+
+1. **docker network create [nome]**
+   - Cria uma rede.
+
+2. **docker network ls**
+   - Lista todas as redes.
+
+3. **docker network rm [rede]**
+   - Remove uma rede.
+
+### Docker Compose
+
+1. **docker-compose up**
+   - Inicia e executa containers definidos em um arquivo `docker-compose.yml`.
+
+2. **docker-compose down**
+   - Para e remove containers, redes, volumes e imagens criadas pelo `docker-compose up`.
+
+3. **docker-compose build**
+   - Cria ou recria os serviços definidos no `docker-compose.yml`.
+
+4. **docker-compose logs**
+   - Exibe os logs dos serviços definidos no `docker-compose.yml`.
+
+Esses são alguns dos comandos mais utilizados no Docker. Dependendo do seu caso de uso, pode haver outros comandos e opções específicos que serão úteis.
+
+## RUN Docker Image
+docker run --name sqlserver -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=GStephano@1998*" -p 1433:1433 -d mcr.microsoft.com/mssql/server
+docker run -v ~/docker --name sqlserver -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=GStephano@1998*" -p 1433:1433 -d mcr.microsoft.com/mssql/server
