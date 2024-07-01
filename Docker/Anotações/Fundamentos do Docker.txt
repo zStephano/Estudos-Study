@@ -1,0 +1,46 @@
+Docker é uma plataforma de código aberto que permite a criação, implantação e execução de aplicativos em contêineres. Aqui estão os fundamentos do Docker:
+
+### 1. **Contêineres**
+- **O que são Contêineres**: Contêineres são unidades padronizadas de software que empacotam código e suas dependências, permitindo que os aplicativos sejam executados de forma consistente em diferentes ambientes.
+- **Diferença entre Contêineres e VMs**: Contêineres compartilham o núcleo do sistema operacional do host, enquanto máquinas virtuais (VMs) emulam um sistema operacional completo.
+
+### 2. **Arquitetura do Docker**
+- **Docker Engine**: Componente central do Docker que executa e gerencia os contêineres.
+- **Docker Daemon**: Serviço em segundo plano que gerencia os objetos Docker, como imagens, contêineres, redes e volumes.
+- **Docker Client**: Interface de linha de comando (CLI) que permite aos usuários interagir com o Docker Daemon.
+
+### 3. **Imagens Docker**
+- **O que são Imagens Docker**: Imagens são modelos somente-leitura usados para criar contêineres. Elas contêm sistemas de arquivos raiz e parâmetros necessários para a execução de aplicativos.
+
+### 4. **Dockerfile**
+- **Definição**: Arquivo de texto usado para especificar a configuração de uma imagem Docker. Ele contém todos os comandos necessários para montar uma imagem.
+
+### 5. **Comandos Básicos do Docker**
+- **docker run**: Utilizado para criar e executar um contêiner a partir de uma imagem.
+- **docker build**: Constrói uma imagem a partir de um Dockerfile.
+- **docker pull**: Baixa uma imagem do registro Docker.
+- **docker push**: Envia uma imagem para o registro Docker.
+
+### 6. **Redes Docker**
+- **Bridge Network**: Rede padrão que permite a comunicação entre contêineres no mesmo host.
+- **Host Network**: Contêiner usa a rede do host diretamente.
+- **Overlay Network**: Rede que permite a comunicação entre contêineres em diferentes hosts Docker.
+
+### 7. **Volumes Docker**
+- **O que são Volumes**: Locais de armazenamento persistente usados para compartilhar dados entre contêineres e persistir dados além do ciclo de vida do contêiner.
+
+### 8. **Orquestração de Contêineres**
+- **Docker Swarm**: Ferramenta de orquestração nativa do Docker para gerenciar clusters de contêineres.
+- **Kubernetes**: Ferramenta de orquestração de contêineres open-source desenvolvida pelo Google.
+
+### 9. **Benefícios do Docker**
+- **Portabilidade**: Os contêineres Docker são executados consistentemente em qualquer ambiente.
+- **Isolamento**: Aplicativos são isolados uns dos outros e do sistema operacional do host.
+- **Eficiência**: Contêineres compartilham recursos do sistema operacional, reduzindo a sobrecarga de recursos.
+
+### 10. **Casos de Uso**
+- **Desenvolvimento de Aplicativos**: Facilita a criação de ambientes de desenvolvimento consistentes.
+- **Implantação de Aplicativos**: Simplifica a implantação de aplicativos em vários ambientes.
+- **Microserviços**: Suporta a arquitetura de microserviços, facilitando a escalabilidade e a gestão.
+
+Esses são os fundamentos essenciais do Docker, que permitem entender como utilizar contêineres para desenvolvimento, implantação e execução de aplicativos de forma eficiente e escalável.
