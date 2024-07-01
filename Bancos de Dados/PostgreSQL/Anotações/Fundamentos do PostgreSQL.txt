@@ -1,0 +1,60 @@
+PostgreSQL é um sistema de gerenciamento de banco de dados relacional (RDBMS) open-source conhecido por sua robustez, flexibilidade e conformidade com os padrões SQL. Aqui estão os fundamentos do PostgreSQL:
+
+### 1. **Arquitetura do PostgreSQL**
+- **Cluster**: Conjunto de bancos de dados gerenciados por uma única instância do PostgreSQL.
+- **Database**: Conjunto de dados organizados. Cada banco de dados contém esquemas.
+- **Schema**: Agrupamento de objetos de banco de dados, como tabelas e índices.
+- **Tables**: Estruturas que armazenam dados em linhas e colunas.
+- **Indexes**: Estruturas que melhoram a velocidade das operações de consulta ao banco de dados.
+- **Views**: Consultas armazenadas que podem ser tratadas como tabelas.
+- **Sequences**: Geradores de números únicos, frequentemente usados para criar valores de chave primária.
+- **Functions**: Funções definidas pelo usuário para encapsular lógica em blocos reutilizáveis.
+- **Triggers**: Procedimentos que são executados automaticamente em resposta a certos eventos em uma tabela ou visão.
+
+### 2. **SQL (Structured Query Language)**
+- **DDL (Data Definition Language)**: Utilizado para definir e gerenciar objetos de banco de dados (CREATE, ALTER, DROP).
+- **DML (Data Manipulation Language)**: Utilizado para manipular dados (SELECT, INSERT, UPDATE, DELETE).
+- **DCL (Data Control Language)**: Utilizado para controlar o acesso ao banco de dados (GRANT, REVOKE).
+- **TCL (Transaction Control Language)**: Utilizado para gerenciar transações no banco de dados (BEGIN, COMMIT, ROLLBACK).
+
+### 3. **Instalação e Configuração**
+- **Instalação**: O processo de instalação envolve a escolha da versão, configuração de opções básicas e avançadas.
+- **Configuração**: Inclui a definição de parâmetros como memória, CPU, e outras opções de desempenho. Arquivo de configuração principal: `postgresql.conf`.
+
+### 4. **Backup e Recuperação**
+- **pg_dump**: Ferramenta para backup lógico de bancos de dados.
+- **pg_restore**: Ferramenta para restaurar backups criados com pg_dump.
+- **Physical Backup**: Utilização de ferramentas como `pg_basebackup` para backups físicos.
+- **Point-in-Time Recovery (PITR)**: Recuperação do banco de dados até um ponto específico no tempo usando arquivos de log de transação.
+
+### 5. **Segurança**
+- **Authentication**: Métodos de autenticação como MD5, LDAP, Kerberos, e certificados SSL.
+- **Roles and Permissions**: Gerenciamento de permissões através de roles (usuários e grupos).
+- **Encryption**: Criptografia de dados em trânsito (SSL/TLS) e em repouso.
+
+### 6. **Desempenho e Monitoramento**
+- **Indexes**: Criação de índices para otimização de consultas.
+- **Query Optimization**: Uso de planos de execução e outras técnicas para otimizar consultas SQL.
+- **Monitoring Tools**: Utilização de ferramentas como `pg_stat_activity`, `pg_stat_user_tables` e extensões como `pg_stat_statements` para monitoramento de desempenho.
+
+### 7. **Replication e High Availability**
+- **Streaming Replication**: Replicação de dados em tempo real de um servidor principal para um servidor de réplica.
+- **Logical Replication**: Replicação de dados em nível lógico, permitindo replicação seletiva de tabelas.
+- **Failover and High Availability**: Utilização de ferramentas como `pgpool-II` e `Patroni` para failover e alta disponibilidade.
+
+### 8. **Extensões**
+- **PostGIS**: Extensão para suporte a dados geoespaciais.
+- **Full-Text Search**: Ferramenta de busca textual avançada.
+- **hstore**: Tipo de dados para armazenamento de pares chave-valor.
+- **JSONB**: Tipo de dados para armazenamento eficiente de dados JSON.
+
+### 9. **Procedural Languages**
+- **PL/pgSQL**: Linguagem de procedimento nativa do PostgreSQL.
+- **Outros PLs**: Suporte a outras linguagens de procedimento como PL/Python, PL/Perl, PL/Tcl.
+
+### 10. **Client Tools**
+- **psql**: Ferramenta de linha de comando interativa para PostgreSQL.
+- **pgAdmin**: Interface gráfica de administração para PostgreSQL.
+- **DBeaver**: Ferramenta GUI de banco de dados universal que suporta PostgreSQL.
+
+Esses são os fundamentos essenciais para entender e trabalhar com o PostgreSQL. Cada tópico pode ser explorado em mais detalhes conforme necessário.
