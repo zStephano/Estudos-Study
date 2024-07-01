@@ -1,0 +1,83 @@
+Para executar uma instância do PostgreSQL em um container Docker, você pode usar o comando `docker run` com as opções apropriadas para configurar as credenciais do banco de dados e mapear as portas. Aqui está um exemplo básico de como fazer isso:
+
+```bash
+docker run --name meu_postgres -e POSTGRES_PASSWORD=minha_senha -d -p 5432:5432 postgres
+```
+
+### Descrição dos Parâmetros:
+
+- `--name meu_postgres`: Define um nome amigável para o container, que neste caso é `meu_postgres`.
+- `-e POSTGRES_PASSWORD=minha_senha`: Define a senha do usuário `postgres` usando a variável de ambiente `POSTGRES_PASSWORD`.
+- `-d`: Executa o container em segundo plano (detached).
+- `-p 5432:5432`: Mapeia a porta 5432 do host para a porta 5432 do container, permitindo que você acesse o PostgreSQL no host através da porta 5432.
+- `postgres`: O nome da imagem do PostgreSQL que será baixada do Docker Hub se ainda não estiver no cache local.
+
+### Variáveis de Ambiente Comuns para Configuração:
+
+Além de `POSTGRES_PASSWORD`, você pode usar outras variáveis de ambiente para configurar o banco de dados:
+
+- `POSTGRES_USER`: Define o nome do usuário do banco de dados. Padrão é `postgres`.
+- `POSTGRES_DB`: Define o nome do banco de dados a ser criado. Padrão é o mesmo que o nome do usuário.
+- `POSTGRES_INITDB_ARGS`: Permite passar argumentos adicionais para o inicializador do banco de dados.
+- `PGDATA`: Define o caminho do diretório de dados dentro do container. Padrão é `/var/lib/postgresql/data`.
+
+### Exemplo com Mais Configurações:
+
+```bash
+docker run --name meu_postgres \
+    -e POSTGRES_USER=meu_usuario \
+    -e POSTGRES_PASSWORD=minha_senha \
+    -e POSTGRES_DB=meu_banco \
+    -d -p 5432:5432 \
+    postgres
+```
+
+Neste exemplo, além da senha (`POSTGRES_PASSWORD`), estamos especificando um usuário (`POSTGRES_USER`) e um banco de dados (`POSTGRES_DB`) personalizados.
+
+### Persistência de Dados:
+
+Para garantir que os dados do PostgreSQL sejam persistidos mesmo após o container ser removido, você pode montar um volume:
+
+```bash
+docker run --name meu_postgres \
+    -e POSTGRES_USER=meu_usuario \
+    -e POSTGRES_PASSWORD=minha_senha \
+    -e POSTGRES_DB=meu_banco \
+    -v meu_volume_postgres:/var/lib/postgresql/data \
+    -d -p 5432:5432 \
+    postgres
+```
+
+Neste caso, o volume `meu_volume_postgres` armazena os dados do banco de dados fora do container.
+
+### Usando Docker Compose:
+
+Se você preferir usar o Docker Compose, crie um arquivo `docker-compose.yml` com a seguinte configuração:
+
+```yaml
+version: '3.1'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: meu_usuario
+      POSTGRES_PASSWORD: minha_senha
+      POSTGRES_DB: meu_banco
+    ports:
+      - "5432:5432"
+    volumes:
+      - meu_volume_postgres:/var/lib/postgresql/data
+
+volumes:
+  meu_volume_postgres:
+```
+
+Então, execute o comando:
+
+```bash
+docker-compose up -d
+```
+
+Com essas configurações, você terá uma instância do PostgreSQL rodando em um container Docker, pronta para uso com as credenciais e configurações especificadas.

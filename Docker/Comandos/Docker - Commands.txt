@@ -92,6 +92,9 @@ Aqui estão alguns dos principais comandos do Docker, organizados por categorias
 
 Esses são alguns dos comandos mais utilizados no Docker. Dependendo do seu caso de uso, pode haver outros comandos e opções específicos que serão úteis.
 
-## RUN Docker Image
+## RUN Docker Image -- SQL Server
 docker run --name sqlserver -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=GStephano@1998*" -p 1433:1433 -d mcr.microsoft.com/mssql/server
 docker run -v ~/docker --name sqlserver -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=GStephano@1998*" -p 1433:1433 -d mcr.microsoft.com/mssql/server
+
+## RUN Docker Image -- PostgreSQL
+docker run -v ~/docker --name postgres -e POSTGRES_USER=pssql -e POSTGRES_PASSWORD=GStephano@1998* -d -p 5432:5432 postgres

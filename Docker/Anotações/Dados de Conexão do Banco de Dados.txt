@@ -1,0 +1,135 @@
+Para obter os dados de conexão de um banco de dados que está rodando em um container Docker, siga os passos abaixo:
+
+### Passo 1: Identifique o Container do Banco de Dados
+
+Primeiro, verifique quais containers estão em execução para identificar o container do banco de dados:
+
+```bash
+docker ps
+```
+
+### Passo 2: Verifique as Configurações do Container
+
+Obtenha detalhes do container do banco de dados usando o comando `docker inspect`, que fornece todas as informações sobre o container, incluindo as configurações de rede:
+
+```bash
+docker inspect [container_id]
+```
+
+Substitua `[container_id]` pelo ID ou nome do container que você encontrou no passo anterior.
+
+### Passo 3: Localize as Informações de Conexão
+
+Na saída do comando `docker inspect`, procure pelas seguintes informações relevantes:
+
+- **Endereço IP**: Localizado na seção `NetworkSettings.IPAddress`.
+- **Portas**: Localizado na seção `NetworkSettings.Ports`. Verifique quais portas estão mapeadas do host para o container.
+
+### Passo 4: Credenciais de Acesso
+
+Se o banco de dados foi configurado via variáveis de ambiente, você pode encontrá-las também na saída do `docker inspect`, sob a seção `Config.Env`. As variáveis de ambiente comuns para bancos de dados incluem:
+
+- `MYSQL_ROOT_PASSWORD` ou `POSTGRES_PASSWORD`: A senha do usuário root/admin.
+- `MYSQL_DATABASE` ou `POSTGRES_DB`: O nome do banco de dados.
+- `MYSQL_USER` ou `POSTGRES_USER`: O nome de usuário do banco de dados.
+
+### Exemplo Prático
+
+Vamos supor que você está rodando um container do MySQL. Aqui está como você pode obter as informações de conexão:
+
+1. Identifique o container MySQL em execução:
+
+    ```bash
+    docker ps
+    ```
+
+    Saída exemplo:
+    ```
+    CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                               NAMES
+    abc12345def6   mysql     "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes   0.0.0.0:3306->3306/tcp, 33060/tcp   my_mysql_db
+    ```
+
+2. Verifique os detalhes do container:
+
+    ```bash
+    docker inspect abc12345def6
+    ```
+
+3. Procure pelo endereço IP e portas na saída do comando:
+
+    ```json
+    ...
+    "NetworkSettings": {
+        "Networks": {
+            "bridge": {
+                "IPAddress": "172.17.0.2",
+                ...
+            }
+        }
+    },
+    "Ports": {
+        "3306/tcp": [
+            {
+                "HostIp": "0.0.0.0",
+                "HostPort": "3306"
+            }
+        ],
+        "33060/tcp": null
+    },
+    ...
+    ```
+
+4. Localize as variáveis de ambiente para credenciais:
+
+    ```json
+    "Config": {
+        ...
+        "Env": [
+            "MYSQL_ROOT_PASSWORD=my-secret-pw",
+            "MYSQL_DATABASE=mydatabase",
+            "MYSQL_USER=myuser",
+            "MYSQL_PASSWORD=mypassword"
+        ],
+        ...
+    }
+    ```
+
+### Informações de Conexão
+
+Com base nas informações obtidas, você pode montar a string de conexão para o seu banco de dados MySQL:
+
+- **Host**: `172.17.0.2` ou `localhost` se estiver acessando a partir do host.
+- **Porta**: `3306`
+- **Usuário**: `myuser`
+- **Senha**: `mypassword`
+- **Banco de Dados**: `mydatabase`
+
+String de conexão de exemplo:
+
+```plaintext
+mysql -h 172.17.0.2 -P 3306 -u myuser -p mydatabase
+```
+
+### Usando Docker Compose
+
+Se você estiver usando o Docker Compose, as informações de conexão geralmente são especificadas no arquivo `docker-compose.yml`. Por exemplo:
+
+```yaml
+version: '3.1'
+
+services:
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+    ports:
+      - "3306:3306"
+```
+
+Você pode acessar o banco de dados no host `db` (nome do serviço) e porta `3306`.
+
+Seguindo esses passos, você conseguirá obter as informações necessárias para se conectar ao seu banco de dados em um container Docker.
