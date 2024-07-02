@@ -1,0 +1,902 @@
+## CREATE DATABASE
+
+Para criar um banco de dados no SQL Server, você pode usar a instrução `CREATE DATABASE`. Essa instrução cria um novo banco de dados e os arquivos associados a ele. Aqui está a sintaxe básica:
+
+```sql
+CREATE DATABASE nome_do_banco_de_dados;
+```
+
+Substitua `nome_do_banco_de_dados` pelo nome que você deseja dar ao seu banco de dados. Lembre-se de que espaços em branco não são permitidos no nome do banco de dados; você pode usar sublinhados (_) em vez disso. Por exemplo, para criar um banco de dados chamado "GeeksForGeeks", você pode usar:
+
+```sql
+CREATE DATABASE GeeksForGeeks;
+```
+
+Depois de executar essa instrução, o novo banco de dados será criado e estará pronto para uso.
+
+------------------------------------------------------
+
+## CREATE TABLE
+
+Para criar uma nova tabela no SQL Server, você pode usar a instrução `CREATE TABLE`. Essa instrução permite especificar o nome da tabela, bem como as colunas e os tipos de dados que serão armazenados. Aqui está a sintaxe básica:
+
+```sql
+CREATE TABLE nome_da_tabela (
+    coluna1 tipo_de_dados,
+    coluna2 tipo_de_dados,
+    coluna3 tipo_de_dados,
+    ...
+);
+```
+
+Substitua `nome_da_tabela` pelo nome que você deseja dar à sua tabela. As colunas são especificadas com seus respectivos nomes e tipos de dados. Por exemplo, para criar uma tabela chamada "Pessoas" com cinco colunas (PersonID, LastName, FirstName, Address e City), você pode usar:
+
+```sql
+CREATE TABLE Pessoas (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);
+```
+
+A coluna `PersonID` é do tipo `int` e armazenará valores inteiros. As colunas `LastName`, `FirstName`, `Address` e `City` são do tipo `varchar` e armazenarão caracteres, com um comprimento máximo de 255 caracteres.
+
+A tabela "Pessoas" vazia ficará assim:
+
+```
+PersonID | LastName | FirstName | Address | City
+-------------------------------------------------
+```
+
+Lembre-se de que você pode preencher a tabela "Pessoas" com dados usando a instrução `INSERT INTO`.
+
+------------------------------------------------------
+
+## ALTER/DROP TABLE
+
+Vamos explorar como alterar e excluir tabelas e colunas no **SQL Server**. Para isso, utilizaremos dois comandos principais: **ALTER TABLE** e **DROP TABLE**.
+
+1. **ALTER TABLE**:
+   - Com o comando `ALTER TABLE`, é possível modificar a estrutura de uma tabela após sua criação. Vejamos as ações possíveis:
+     - **Adicionar uma coluna à tabela**:
+       ```sql
+       ALTER TABLE nome_tabela ADD nome_coluna tipo_dados;
+       ```
+     - **Excluir uma coluna de uma tabela**:
+       ```sql
+       ALTER TABLE nome_tabela DROP COLUMN nome_coluna;
+       ```
+     - **Alterar o tipo de dados de uma coluna**:
+       ```sql
+       ALTER TABLE nome_tabela ALTER COLUMN nome_coluna tipo_dados;
+       ```
+     - **Adicionar uma constraint do tipo NOT NULL a uma coluna**:
+       ```sql
+       ALTER TABLE nome_tabela ALTER COLUMN nome_coluna tipo_dados NOT NULL;
+       ```
+     - **Adicionar uma constraint de chave primária a uma coluna**:
+       ```sql
+       ALTER TABLE nome_tabela ADD CONSTRAINT nome_constraint PRIMARY KEY (coluna1, coluna2, ...);
+       ```
+     - **Excluir uma constraint de uma tabela**:
+       ```sql
+       ALTER TABLE nome_tabela DROP CONSTRAINT nome_constraint;
+       ```
+   - Exemplos:
+     - Excluir a coluna `ID_Autor` da tabela `tbl_livros`:
+       ```sql
+       ALTER TABLE tbl_livros DROP COLUMN ID_Autor;
+       ```
+     - Adicionar a coluna `ID_Autor` à tabela `tbl_livros` como chave estrangeira da coluna `ID_Autor` da tabela `tbl_autores`:
+       ```sql
+       ALTER TABLE tbl_livros ADD ID_Autor SMALLINT NOT NULL CONSTRAINT fk_ID_Autor FOREIGN KEY (ID_Autor) REFERENCES tbl_autores (ID_autor);
+       ```
+     - Alterar o tipo de dados da coluna `ID_Autor` para `SMALLINT`:
+       ```sql
+       ALTER TABLE tbl_livros ALTER COLUMN ID_Autor SMALLINT;
+       ```
+     - Adicionar a constraint `PRIMARY KEY` à coluna `ID_Cliente` (já existente) da tabela `Clientes`:
+       ```sql
+       ALTER TABLE Clientes ADD CONSTRAINT pk_id_cliente PRIMARY KEY (ID_Cliente);
+       ```
+
+2. **DROP TABLE**:
+   - O comando `DROP TABLE` é usado para excluir uma tabela do banco de dados, incluindo todos os seus dados.
+   - Sintaxe:
+     ```sql
+     DROP TABLE nome_tabela;
+     ```
+   - Exemplo:
+     ```sql
+     DROP TABLE Clientes;
+     ```
+
+**Exercício para Fixação**:
+1. Crie uma nova tabela chamada `tbl_generos` no banco de dados `db_Biblioteca` para armazenar gêneros de livros.
+2. Adicione uma coluna à tabela de livros para relacioná-la com a tabela de gêneros.
+3. Insira um novo registro de livro no banco, considerando editoras, autores e gêneros necessários. 📚
+
+------------------------------------------------------
+
+## CONSTRAINTS
+
+Essas restrições são essenciais para garantir a precisão e confiabilidade dos dados em uma tabela. Quando aplicadas corretamente, elas evitam erros e mantêm a integridade do banco de dados. Vamos lá:
+
+1. **O que são Constraints?**
+   - As **constraints** são regras aplicadas a colunas de uma tabela. Elas definem características específicas para essas colunas.
+   - Alguns exemplos de **constraints** incluem:
+     - **NOT NULL**: Impede que uma coluna aceite valores nulos (ou seja, vazios).
+     - **UNIQUE**: Garante que os valores em uma coluna sejam exclusivos (sem duplicatas).
+     - **PRIMARY KEY**: Define uma coluna como chave primária, garantindo unicidade e indexação.
+     - **FOREIGN KEY**: Relaciona uma coluna com outra tabela, mantendo a integridade referencial.
+     - **CHECK**: Permite definir condições específicas para os valores de uma coluna.
+     - **DEFAULT**: Define um valor padrão para uma coluna, caso nenhum valor seja especificado.
+
+2. **Por que usar Constraints?**
+   - Imagine uma coluna que armazena placas de carros. Sem **constraints**, qualquer valor seria aceito, inclusive valores inválidos.
+   - As **constraints** evitam erros humanos, transferências incorretas e problemas causados por bugs ou vírus.
+   - Elas tornam o banco de dados mais confiável e robusto.
+
+3. **Tipos de Constraints**:
+   - **NOT NULL**: Impede valores nulos.
+   - **UNIQUE**: Garante valores exclusivos.
+   - **PRIMARY KEY**: Define uma chave primária.
+   - **FOREIGN KEY**: Mantém integridade referencial.
+   - **CHECK**: Permite condições personalizadas.
+   - **DEFAULT**: Define valores padrão.
+
+Em resumo, as **constraints** são como regras que moldam o comportamento das colunas em uma tabela, garantindo dados corretos e consistentes.
+
+------------------------------------------------------
+
+## PRIMARY KEY
+
+A chave primária é uma restrição que identifica exclusivamente cada registro em uma tabela. Ela garante a integridade dos dados e evita duplicatas. Aqui estão os pontos-chave:
+
+1. **O que é uma Chave Primária?**
+   - A **chave primária** é uma coluna (ou combinação de colunas) que identifica de forma única cada linha em uma tabela.
+   - Ela deve conter valores **únicos** e não pode conter valores **nulos**.
+   - Uma tabela pode ter **apenas uma chave primária**.
+
+2. **Exemplos de Sintaxe:**
+   - Para criar uma chave primária ao criar uma tabela:
+     ```sql
+     CREATE TABLE Pessoas (
+         ID int NOT NULL PRIMARY KEY,
+         LastName varchar(255) NOT NULL,
+         FirstName varchar(255),
+         Age int
+     );
+     ```
+   - Para adicionar uma chave primária a uma tabela existente:
+     ```sql
+     ALTER TABLE Pessoas ADD CONSTRAINT PK_Person PRIMARY KEY (ID);
+     ```
+
+3. **Benefícios da Chave Primária:**
+   - Garante unicidade dos registros.
+   - Facilita a indexação e busca eficiente.
+   - Mantém a integridade dos dados.
+
+------------------------------------------------------
+
+## COMPOSITE KEY
+
+Uma chave primária composta é aquela que consiste em duas ou mais colunas em uma tabela. Também é conhecida como chave primária composta. Vamos entender melhor:
+
+1. **O que é uma Chave Primária Composta?**
+   - Uma **chave primária composta** é uma combinação de colunas que identifica exclusivamente cada linha em uma tabela.
+   - Ela deve conter valores **únicos** e não pode conter valores **nulos**.
+   - Uma tabela pode ter **apenas uma chave primária**, mas essa chave pode ser composta por várias colunas.
+
+2. **Exemplo de Sintaxe:**
+   - Para criar uma chave primária composta ao criar uma tabela:
+     ```sql
+     CREATE TABLE Votacao (
+         ID_Pergunta NUMERIC,
+         ID_Membro NUMERIC,
+         PRIMARY KEY (ID_Pergunta, ID_Membro)
+     );
+     ```
+   - A combinação `(ID_Pergunta, ID_Membro)` deve ser única para a tabela, e nenhum dos valores pode ser nulo.
+   - Se você fizer uma consulta como esta:
+     ```sql
+     SELECT * FROM Votacao WHERE ID_Pergunta = 7;
+     ```
+     Ela usará o índice da chave primária.
+   - No entanto, se fizer isso:
+     ```sql
+     SELECT * FROM Votacao WHERE ID_Membro = 7;
+     ```
+     Não usará o índice da chave primária, pois é necessário usar todas as colunas da esquerda do índice composto.
+   - Escolha entre `(ID_Pergunta, ID_Membro)` e `(ID_Membro, ID_Pergunta)` com base na forma como usará a tabela. Se necessário, adicione um índice único na outra ordem:
+     ```sql
+     CREATE UNIQUE INDEX idx1 ON Votacao (ID_Membro, ID_Pergunta);
+     ```
+
+3. **Benefícios da Chave Primária Composta:**
+   - Garante a unicidade dos registros.
+   - Facilita a indexação e a busca eficiente.
+   - Mantém a integridade dos dados.
+
+------------------------------------------------------
+
+## INDEX / ÍNDICES
+
+Essas estruturas são fundamentais para otimizar o desempenho das consultas e melhorar a velocidade de recuperação dos dados. Vou explicar os principais pontos:
+
+1. **Como o SQL Server Armazena e Acessa Dados:**
+   - Os registros são armazenados em **páginas de dados**, que compõem uma **pilha**. Cada página tem até 8 KB e contém um cabeçalho, links para outras páginas e dados.
+   - Não há ordenação sequencial nas páginas de dados; elas formam uma pilha.
+   - Quando uma página está quase cheia, ela é dividida e estabelece links entre as partes.
+
+2. **Como os Dados São Localizados:**
+   - Existem dois métodos:
+     - **Exame de Tabela**: Percorre todas as páginas de dados da tabela, examinando os registros.
+     - **Usando Índices**: Navega na estrutura da árvore do índice para localizar registros específicos.
+
+3. **Índices no SQL Server:**
+   - Existem dois tipos principais:
+     - **Índice Clusterizado**: Define a ordem física dos dados na tabela. A própria tabela é reorganizada com base no índice.
+     - **Índice Não Clusterizado**: Cria uma estrutura separada para os dados do índice, apontando para as páginas de dados da tabela.
+   - Os índices melhoram a eficiência das consultas e reduzem gargalos.
+
+------------------------------------------------------
+
+## IDENTITY
+
+Essa propriedade é usada para criar uma coluna de identidade em uma tabela, gerando valores exclusivos para cada linha. Aqui estão os principais pontos:
+
+1. **Sintaxe da Propriedade IDENTITY:**
+   - A sintaxe básica é a seguinte:
+     ```sql
+     IDENTITY [(seed, increment)]
+     ```
+   - O **seed** é o valor usado para a primeira linha carregada na tabela.
+   - O **increment** é o valor incremental adicionado ao valor de identidade da linha anterior que foi carregada.
+   - Se nenhum valor for especificado, o padrão será (1,1).
+
+2. **Benefícios da Propriedade IDENTITY:**
+   - Garante valores exclusivos para cada linha.
+   - Facilita a criação de chaves primárias.
+   - Melhora o desempenho das consultas.
+
+3. **Observações Importantes:**
+   - A propriedade IDENTITY não garante exclusividade do valor; use restrições PRIMARY KEY ou UNIQUE para isso.
+   - Valores consecutivos não são garantidos em transações simultâneas.
+   - Após reinicializações do servidor, pode haver intervalos nos valores de identidade.
+
+------------------------------------------------------
+
+## INSERT
+
+O comando **INSERT** é usado para inserir novos registros em uma tabela no **SQL**. Vou explicar como usá-lo:
+
+1. **Sintaxe Básica:**
+   - Existem duas maneiras de escrever o comando **INSERT INTO**:
+     1. Especificando os nomes das colunas e os valores a serem inseridos:
+        ```sql
+        INSERT INTO nome_da_tabela (coluna1, coluna2, coluna3, ...) VALUES (valor1, valor2, valor3, ...);
+        ```
+     2. Se você estiver adicionando valores para todas as colunas da tabela, não precisa especificar os nomes das colunas:
+        ```sql
+        INSERT INTO nome_da_tabela VALUES (valor1, valor2, valor3, ...);
+        ```
+
+2. **Exemplo:**
+   - Suponha que temos a tabela "Clientes" com as colunas "CustomerName", "ContactName", "Address", "City", "PostalCode" e "Country".
+   - Para inserir um novo cliente chamado "Cardinal" com informações, podemos usar:
+     ```sql
+     INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+     VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+     ```
+
+3. **Observações:**
+   - A coluna "CustomerID" não foi especificada porque é um campo de incremento automático.
+   - Você também pode inserir dados apenas em colunas específicas.
+   - É possível inserir várias linhas em uma única instrução.
+
+------------------------------------------------------
+
+## SELECT
+
+O comando **SELECT** é um dos mais importantes da linguagem SQL e permite recuperar dados de um objeto do banco de dados, como uma tabela, view ou, em alguns casos, uma stored procedure. Vamos explorar os principais aspectos:
+
+1. **Sintaxe Básica:**
+   - A estrutura básica do comando SELECT é:
+     ```sql
+     SELECT <lista_de_campos> FROM <nome_da_tabela>;
+     ```
+   - Por exemplo:
+     ```sql
+     SELECT CODIGO, NOME FROM CLIENTES;
+     ```
+   - O caractere `*` representa todos os campos, mas seu uso não é recomendado, pois pode afetar o desempenho.
+
+2. **Filtrando Dados com a Cláusula WHERE:**
+   - A cláusula `WHERE` permite aplicar condições de filtragem aos registros.
+   - Exemplos:
+     - Selecionar clientes com código igual a 10:
+       ```sql
+       SELECT CODIGO, NOME FROM CLIENTES WHERE CODIGO = 10;
+       ```
+     - Selecionar clientes do Rio de Janeiro ou inativos em São Paulo:
+       ```sql
+       SELECT CODIGO, NOME FROM CLIENTES WHERE UF = 'RJ' OR (UF = 'SP' AND ATIVO = 'N');
+       ```
+     - Buscar clientes cujos nomes iniciam com "Maria":
+       ```sql
+       SELECT CODIGO, NOME FROM CLIENTES WHERE NOME LIKE 'MARIA%';
+       ```
+
+3. **Ordenação de Resultados:**
+   - Use a cláusula `ORDER BY` para ordenar os resultados:
+     ```sql
+     SELECT CODIGO, NOME FROM CLIENTES ORDER BY NOME;
+     ```
+
+4. **Funções de Agrupamento e Agrupamento com HAVING:**
+   - Para cálculos agregados (soma, média, contagem etc.), use funções como `SUM`, `AVG`, `COUNT`, etc.
+   - Exemplo:
+     ```sql
+     SELECT UF, COUNT(*) AS TotalClientes FROM CLIENTES GROUP BY UF HAVING COUNT(*) > 10;
+     ```
+
+O comando SELECT é poderoso e versátil.
+
+------------------------------------------------------
+
+## QUERIES
+
+As queries (consultas) são essenciais para recuperar, filtrar e manipular dados em bancos de dados relacionais. Aqui estão os principais conceitos:
+
+1. **Estrutura Básica de Queries SQL:**
+   - Uma query SQL envolve o uso de cláusulas como `SELECT`, `FROM`, `WHERE`, `GROUP BY` e `ORDER BY`.
+   - A cláusula `SELECT` especifica as colunas que você deseja recuperar.
+   - A cláusula `FROM` indica a tabela da qual você está consultando os dados.
+   - A cláusula `WHERE` permite aplicar filtros aos registros.
+   - A cláusula `GROUP BY` é usada para agrupar resultados com base em uma ou mais colunas.
+   - A cláusula `ORDER BY` ordena os resultados.
+
+2. **Exemplo de Query:**
+   - Suponha que temos uma tabela chamada "Clientes" com colunas como "Nome", "Cidade" e "Idade".
+   - Para recuperar os nomes dos clientes de São Paulo com idade acima de 30 anos, podemos usar:
+     ```sql
+     SELECT Nome FROM Clientes WHERE Cidade = 'São Paulo' AND Idade > 30;
+     ```
+
+3. **Dicas Importantes:**
+   - Use aliases para renomear colunas ou tabelas na query.
+   - Evite usar `SELECT *` para melhorar a performance e evitar trazer colunas desnecessárias.
+   - Pratique consultas em bancos de dados de exemplo para aprimorar suas habilidades.
+
+------------------------------------------------------
+
+## ORDER BY
+
+A cláusula **ORDER BY** é usada para obter registros ordenados por uma ou mais colunas em ordem ascendente ou descendente. Ela deve vir após as cláusulas **WHERE**, **GROUP BY** e **HAVING**, se presentes na consulta. Vejamos os principais pontos:
+
+1. **Sintaxe Básica:**
+   - A estrutura básica da cláusula **SELECT** com **ORDER BY** é:
+     ```sql
+     SELECT <lista_de_campos> FROM <nome_da_tabela> ORDER BY <coluna1> [ASC | DESC], <coluna2> [ASC | DESC], ...;
+     ```
+   - Por exemplo:
+     ```sql
+     SELECT CODIGO, NOME FROM CLIENTES ORDER BY NOME;
+     ```
+   - Use **ASC** para ordenar em ordem crescente e **DESC** para ordem decrescente.
+
+2. **Exemplo:**
+   - Suponha que temos uma tabela "Clientes" com colunas como "Nome", "Cidade" e "Idade".
+   - Para recuperar os nomes dos clientes de São Paulo com idade acima de 30 anos, podemos usar:
+     ```sql
+     SELECT Nome FROM Clientes WHERE Cidade = 'São Paulo' AND Idade > 30 ORDER BY Nome;
+     ```
+
+3. **Dicas Importantes:**
+   - Evite usar `SELECT *` para melhorar o desempenho e evitar trazer colunas desnecessárias.
+   - A ordem das colunas na cláusula **ORDER BY** define a organização do conjunto de resultados classificado.
+
+------------------------------------------------------
+
+## UPDATE
+
+O comando **UPDATE** é usado para modificar registros existentes em uma tabela no **SQL**. Vou explicar como usá-lo:
+
+1. **Sintaxe Básica:**
+   - A estrutura básica do comando **UPDATE** é:
+     ```sql
+     UPDATE nome_da_tabela SET coluna1 = valor1, coluna2 = valor2, ... WHERE condição;
+     ```
+   - Por exemplo, para atualizar o contato e a cidade do primeiro cliente (CustomerID = 1):
+     ```sql
+     UPDATE Customers SET ContactName = 'Alfred Schmidt', City = 'Frankfurt' WHERE CustomerID = 1;
+     ```
+
+2. **Atualização de Múltiplos Registros:**
+   - A cláusula `WHERE` determina quantos registros serão atualizados.
+   - O seguinte exemplo atualiza o campo `ContactName` para "Juan" em todos os registros onde o país é "Mexico":
+     ```sql
+     UPDATE Customers SET ContactName = 'Juan' WHERE Country = 'Mexico';
+     ```
+
+3. **Cuidado!**
+   - Se você omitir a cláusula `WHERE`, **todos** os registros na tabela serão atualizados!
+   - Use com atenção para evitar alterações indesejadas.
+
+------------------------------------------------------
+
+## DELETE
+
+O comando **DELETE** permite que uma ou mais linhas sejam excluídas de uma tabela no banco de dados. Vamos explorar os principais aspectos:
+
+1. **Sintaxe Básica:**
+   - A estrutura básica do comando **DELETE** é:
+     ```sql
+     DELETE FROM nome_da_tabela WHERE condição_de_busca;
+     ```
+   - Por exemplo, para remover o produto com ID igual a 3 da tabela "produtos":
+     ```sql
+     DELETE FROM produtos WHERE id = 3;
+     ```
+
+2. **Exemplo:**
+   - Suponha que temos uma tabela "Clientes" com colunas como "Nome", "Cidade" e "Idade".
+   - Para excluir um cliente específico (por exemplo, com ID igual a 8), podemos usar:
+     ```sql
+     DELETE FROM Clientes WHERE ID = 8;
+     ```
+
+3. **Cuidados:**
+   - A cláusula `WHERE` é essencial para identificar qual registro será removido.
+   - Tenha cuidado ao usar o comando DELETE, pois ele afeta permanentemente os dados.
+
+------------------------------------------------------
+
+## MIN, MAX & COUNT
+
+1. **MIN (Valor Mínimo)**:
+   - A função **MIN** retorna o menor valor de uma coluna especificada.
+   - Por exemplo, para encontrar o menor preço entre todos os produtos, você pode usar:
+     ```sql
+     SELECT MIN(preco) AS MenorPreco FROM produtos;
+     ```
+
+2. **MAX (Valor Máximo)**:
+   - A função **MAX** retorna o maior valor de uma coluna especificada.
+   - Para encontrar o maior preço entre todos os produtos, use:
+     ```sql
+     SELECT MAX(preco) AS MaiorPreco FROM produtos;
+     ```
+
+3. **COUNT (Número de Linhas)**:
+   - A função **COUNT** calcula o número total de linhas em um conjunto de resultados.
+   - Por exemplo, para contar o número total de clientes, você pode fazer:
+     ```sql
+     SELECT COUNT(*) AS TotalClientes FROM clientes;
+     ```
+
+Lembre-se:
+- Essas funções de agregação podem ser usadas em combinação com outras cláusulas (por exemplo, **WHERE**).
+- Tenha cuidado com as operações de **DELETE** e **UPDATE**, especialmente ao usar funções de agregação sem o devido filtro.
+
+------------------------------------------------------
+
+## LIKE
+
+A cláusula **LIKE** é usada para buscar registros que correspondam a um padrão específico em uma coluna. Ela é frequentemente usada com dois curingas:
+
+1. O sinal de porcentagem (%) representa zero, um ou vários caracteres.
+2. O sublinhado (_) representa um único caractere.
+
+Aqui estão alguns exemplos:
+
+- Para selecionar todos os clientes cujos nomes começam com a letra "a":
+  ```sql
+  SELECT * FROM Customers WHERE CustomerName LIKE 'a%';
+  ```
+
+- Para encontrar clientes de uma cidade que começa com "L", seguido por um caractere curinga, depois "nd" e, finalmente, mais dois caracteres curinga:
+  ```sql
+  SELECT * FROM Customers WHERE city LIKE 'L_nd__';
+  ```
+
+- Para retornar clientes cujos nomes contêm a letra "L":
+  ```sql
+  SELECT * FROM Customers WHERE city LIKE '%L%';
+  ```
+
+- Para obter clientes cujos nomes terminam com "a":
+  ```sql
+  SELECT * FROM Customers WHERE CustomerName LIKE '%a';
+  ```
+
+- Você também pode combinar "começa com" e "termina com":
+  ```sql
+  SELECT * FROM Customers WHERE CustomerName LIKE 'b%s';
+  ```
+
+Lembre-se de usar a cláusula **WHERE** para filtrar os resultados adequadamente.
+
+------------------------------------------------------
+
+## IN, BETWEEN
+
+# Cláusula IN
+A cláusula **IN** é uma ferramenta poderosa para filtrar dados com base em uma lista de valores específicos. Ela permite comparar uma coluna com diversos valores de maneira eficiente e concisa. Vejamos os detalhes:
+
+### Sintaxe Básica
+A sintaxe básica da cláusula **IN** é simples. Ela é usada em conjunto com a instrução **SELECT** da seguinte maneira:
+```sql
+SELECT coluna FROM tabela WHERE coluna IN (valor1, valor2, valor3, ...);
+```
+
+### Exemplo Prático
+Suponha que temos uma tabela de produtos e queremos recuperar todos os produtos que pertencem à categoria "Eletrônicos" ou "Roupas", além dos produtos em promoção. A consulta poderia ser assim:
+```sql
+SELECT nome_produto FROM produtos WHERE categoria IN ('Eletrônicos', 'Roupas') OR em_promocao = 1;
+```
+
+A cláusula **IN** pode ser utilizada com diferentes tipos de dados, como números, strings e datas. Além disso, é possível combinar a cláusula **IN** com outras condições usando operadores lógicos (AND, OR) para criar consultas mais complexas e precisas.
+
+# Cláusula BETWEEN
+A cláusula **BETWEEN** é usada para selecionar dados em um intervalo numérico ou de datas. Ela é especialmente útil para consultas que envolvem valores contidos em um intervalo específico.
+
+### Sintaxe Básica
+A sintaxe básica da cláusula **BETWEEN** é a seguinte:
+```sql
+SELECT coluna FROM tabela WHERE coluna BETWEEN valor_inicial AND valor_final;
+```
+
+### Exemplo Prático
+Suponha que temos uma tabela de vendas e queremos recuperar todas as vendas realizadas entre as datas de 1º de janeiro de 2024 e 31 de março de 2024. A consulta poderia ser assim:
+```sql
+SELECT * FROM vendas WHERE data_venda BETWEEN '2024-01-01' AND '2024-03-31';
+```
+
+A cláusula **BETWEEN** também pode ser aplicada a outros tipos de dados, como valores numéricos.
+
+Em resumo, tanto a cláusula **IN** quanto a cláusula **BETWEEN** são ferramentas essenciais para filtrar dados de maneira precisa e eficiente em consultas SQL.
+
+------------------------------------------------------
+
+## ALIAS
+
+A cláusula **ALIAS** é usada para atribuir um nome temporário a uma tabela ou a uma coluna em uma consulta SQL. Ela é especialmente útil para melhorar a legibilidade das consultas e para evitar ambiguidades quando há junções de tabelas ou cálculos envolvidos.
+
+### Uso de ALIAS para Colunas
+- Você pode atribuir um alias a uma coluna para tornar o resultado mais descritivo.
+- Por exemplo, suponha que temos uma tabela de funcionários com colunas "Nome", "Salário" e "Data de Contratação". Para obter uma lista de funcionários com seus salários mensais, podemos usar:
+  ```sql
+  SELECT Nome, Salario AS SalarioMensal FROM Funcionarios;
+  ```
+  Nesse caso, o alias "SalarioMensal" torna o resultado mais claro.
+
+### Uso de ALIAS para Tabelas
+- Quando você faz junções (joins) entre várias tabelas, pode usar aliases para diferenciar as tabelas.
+- Por exemplo, se tivermos uma tabela de pedidos ("Pedidos") e uma tabela de clientes ("Clientes"), podemos fazer um join assim:
+  ```sql
+  SELECT p.NumeroPedido, c.Nome AS NomeCliente
+  FROM Pedidos p
+  INNER JOIN Clientes c ON p.ClienteID = c.ClienteID;
+  ```
+  Nesse caso, os aliases "p" e "c" representam as tabelas "Pedidos" e "Clientes", respectivamente.
+
+### Dicas Importantes
+- Use aliases de forma consistente e significativa para facilitar a leitura das consultas.
+- Lembre-se de que os aliases são temporários e se aplicam apenas à consulta atual.
+
+------------------------------------------------------
+
+## JOINS
+
+Os joins em SQL são usados para combinar registros de duas ou mais tabelas em um banco de dados. Existem vários tipos de joins, cada um com um propósito específico. Aqui estão os principais tipos de joins:
+
+### 1. **INNER JOIN**
+Combina registros que têm valores correspondentes em ambas as tabelas.
+```sql
+SELECT a.coluna1, b.coluna2
+FROM tabelaA a
+INNER JOIN tabelaB b ON a.coluna_comum = b.coluna_comum;
+```
+
+### 2. **LEFT JOIN (ou LEFT OUTER JOIN)**
+Retorna todos os registros da tabela da esquerda (tabelaA), e os registros correspondentes da tabela da direita (tabelaB). Se não houver correspondência, os resultados conterão valores NULL para as colunas da tabela da direita.
+```sql
+SELECT a.coluna1, b.coluna2
+FROM tabelaA a
+LEFT JOIN tabelaB b ON a.coluna_comum = b.coluna_comum;
+```
+
+### 3. **RIGHT JOIN (ou RIGHT OUTER JOIN)**
+Retorna todos os registros da tabela da direita (tabelaB), e os registros correspondentes da tabela da esquerda (tabelaA). Se não houver correspondência, os resultados conterão valores NULL para as colunas da tabela da esquerda.
+```sql
+SELECT a.coluna1, b.coluna2
+FROM tabelaA a
+RIGHT JOIN tabelaB b ON a.coluna_comum = b.coluna_comum;
+```
+
+### 4. **FULL JOIN (ou FULL OUTER JOIN)**
+Retorna todos os registros quando há uma correspondência em tabelaA ou tabelaB. Registros sem correspondência em uma das tabelas terão valores NULL nas colunas dessa tabela.
+```sql
+SELECT a.coluna1, b.coluna2
+FROM tabelaA a
+FULL OUTER JOIN tabelaB b ON a.coluna_comum = b.coluna_comum;
+```
+
+### 5. **CROSS JOIN**
+Retorna o produto cartesiano de duas tabelas. Cada registro da tabelaA é combinado com todos os registros da tabelaB.
+```sql
+SELECT a.coluna1, b.coluna2
+FROM tabelaA a
+CROSS JOIN tabelaB b;
+```
+
+### 6. **SELF JOIN**
+Um join de uma tabela consigo mesma. É útil para operações que comparam registros na mesma tabela.
+```sql
+SELECT a.coluna1, b.coluna2
+FROM tabelaA a
+INNER JOIN tabelaA b ON a.coluna_comum = b.coluna_comum;
+```
+
+### Exemplos Práticos
+Suponha que temos duas tabelas:
+
+**Employees**
+| EmployeeID | Name      | DepartmentID |
+|------------|-----------|--------------|
+| 1          | John      | 1            |
+| 2          | Jane      | 2            |
+| 3          | Sam       | NULL         |
+
+**Departments**
+| DepartmentID | DepartmentName |
+|--------------|----------------|
+| 1            | HR             |
+| 2            | IT             |
+| 3            | Marketing      |
+
+#### INNER JOIN
+```sql
+SELECT e.Name, d.DepartmentName
+FROM Employees e
+INNER JOIN Departments d ON e.DepartmentID = d.DepartmentID;
+```
+**Resultado:**
+| Name | DepartmentName |
+|------|----------------|
+| John | HR             |
+| Jane | IT             |
+
+#### LEFT JOIN
+```sql
+SELECT e.Name, d.DepartmentName
+FROM Employees e
+LEFT JOIN Departments d ON e.DepartmentID = d.DepartmentID;
+```
+**Resultado:**
+| Name | DepartmentName |
+|------|----------------|
+| John | HR             |
+| Jane | IT             |
+| Sam  | NULL           |
+
+#### RIGHT JOIN
+```sql
+SELECT e.Name, d.DepartmentName
+FROM Employees e
+RIGHT JOIN Departments d ON e.DepartmentID = d.DepartmentID;
+```
+**Resultado:**
+| Name | DepartmentName |
+|------|----------------|
+| John | HR             |
+| Jane | IT             |
+| NULL | Marketing      |
+
+#### FULL JOIN
+```sql
+SELECT e.Name, d.DepartmentName
+FROM Employees e
+FULL OUTER JOIN Departments d ON e.DepartmentID = d.DepartmentID;
+```
+**Resultado:**
+| Name | DepartmentName |
+|------|----------------|
+| John | HR             |
+| Jane | IT             |
+| Sam  | NULL           |
+| NULL | Marketing      |
+
+Os joins são ferramentas poderosas para consultar dados de múltiplas tabelas, permitindo uma análise e uma integração de dados mais robusta.
+
+------------------------------------------------------
+
+## UNION
+
+A cláusula **UNION** é usada para combinar os resultados de duas ou mais consultas **SELECT** em um único conjunto de resultados. Ela é especialmente útil quando você deseja obter informações de várias tabelas relacionadas, mantendo a clareza e legibilidade do código.
+
+### Sintaxe Básica
+A sintaxe básica da cláusula **UNION** é a seguinte:
+```sql
+SELECT coluna1, coluna2, ... FROM tabela1
+UNION [ALL]
+SELECT coluna1, coluna2, ... FROM tabela2;
+```
+
+- O operador **UNION** combina os resultados de duas ou mais consultas.
+- O modificador **ALL** (opcional) inclui todas as linhas nos resultados, incluindo duplicatas. Se não for especificado, as linhas duplicadas serão removidas.
+
+### Exemplo Prático
+Suponha que temos duas tabelas: "VendasOnline" e "VendasLojaFísica". Queremos obter todas as vendas de ambos os canais. Podemos usar a cláusula **UNION** assim:
+```sql
+SELECT NumeroPedido, DataVenda FROM VendasOnline
+UNION
+SELECT NumeroPedido, DataVenda FROM VendasLojaFísica;
+```
+
+Nesse exemplo, o **UNION** combina os resultados das duas tabelas, retornando um conjunto de resultados único com todas as vendas.
+
+Lembre-se de que o **UNION** não cria linhas individuais com base em colunas coletadas de duas tabelas; ele simplesmente concatena os resultados das consultas.
+
+------------------------------------------------------
+
+## GROUP BY
+
+A cláusula **GROUP BY** é usada para dividir o resultado de uma consulta em grupos de linhas, normalmente aplicando uma ou mais funções de agregação em cada grupo. Vamos explorar os detalhes:
+
+1. **Sintaxe Básica**:
+   - A sintaxe básica da cláusula **GROUP BY** é:
+     ```sql
+     SELECT coluna1, coluna2, ..., função_agregação(coluna) AS nome_coluna
+     FROM tabela
+     GROUP BY coluna1, coluna2, ...;
+     ```
+   - Por exemplo, para calcular a soma dos salários por departamento:
+     ```sql
+     SELECT departamento, SUM(salario) AS total_salarios
+     FROM funcionarios
+     GROUP BY departamento;
+     ```
+
+2. **Funções de Agregação**:
+   - As funções de agregação incluem **SUM**, **AVG**, **COUNT**, **MIN**, **MAX** etc.
+   - Elas operam nos valores de uma coluna dentro de cada grupo.
+
+3. **Observações Importantes**:
+   - As colunas listadas no **GROUP BY** devem estar presentes na cláusula **SELECT** ou serem funções de agregação.
+   - O **GROUP BY** não pode ser usado sem funções de agregação.
+
+As cláusulas **GROUP BY** são essenciais para resumir dados e obter insights agregados.
+
+------------------------------------------------------
+
+## HAVING
+
+A cláusula **HAVING** é usada para filtrar os resultados de uma consulta após a aplicação da cláusula **GROUP BY**. Ela permite que você especifique condições para grupos agregados. Vamos explorar os detalhes:
+
+1. **Uso da Cláusula HAVING**:
+   - A cláusula **HAVING** é aplicada após o **GROUP BY** e permite filtrar grupos com base em funções agregadas (como **SUM**, **COUNT**, **AVG**, etc.).
+   - Por exemplo, se quisermos encontrar os departamentos com uma média salarial superior a 5000, podemos fazer:
+     ```sql
+     SELECT departamento, AVG(salario) AS media_salarial
+     FROM funcionarios
+     GROUP BY departamento
+     HAVING AVG(salario) > 5000;
+     ```
+
+2. **Diferença entre WHERE e HAVING**:
+   - O **WHERE** filtra linhas antes do **GROUP BY**, enquanto o **HAVING** filtra grupos após o **GROUP BY**.
+   - O **WHERE** é usado para condições individuais em linhas, e o **HAVING** é usado para condições agregadas em grupos.
+
+3. **Observações Importantes**:
+   - O **HAVING** deve ser usado com funções agregadas (como **SUM**, **AVG**, etc.).
+   - Ele não pode ser usado sem o **GROUP BY**.
+
+------------------------------------------------------
+
+## VIEWS
+
+As **views** (ou visões) são uma ferramenta poderosa no **SQL Server** e em outros sistemas de gerenciamento de banco de dados. Elas permitem criar consultas predefinidas que podem ser tratadas como tabelas virtuais. Vamos explorar os conceitos básicos:
+
+1. **O que é uma View?**
+   - Uma **view** é uma consulta SQL armazenada no banco de dados como um objeto.
+   - Ela representa uma tabela virtual que contém os resultados de uma consulta.
+   - As views podem simplificar consultas complexas, melhorar a segurança e facilitar o acesso aos dados.
+
+2. **Vantagens das Views:**
+   - **Segurança**: Você pode restringir o acesso direto às tabelas e permitir que os usuários acessem apenas dados específicos via views.
+   - **Simplicidade**: Views podem ocultar a complexidade de joins e cálculos.
+   - **Consistência**: Lógica complexa pode ser encapsulada em views para reutilização.
+
+3. **Exemplo de Criação de View:**
+   - Suponha que temos uma tabela de produtos e queremos criar uma view que mostre o nome do produto, a marca e o preço:
+     ```sql
+     CREATE VIEW InformacoesProduto AS
+     SELECT NomeProduto, Marca, Preco FROM Produtos;
+     ```
+   - Agora podemos consultar a view como se fosse uma tabela:
+     ```sql
+     SELECT * FROM InformacoesProduto;
+     ```
+
+4. **Gerenciando Views:**
+   - **Criar**: Use `CREATE VIEW` para criar uma nova view.
+   - **Modificar**: Use `ALTER VIEW` para modificar uma view existente.
+   - **Excluir**: Use `DROP VIEW` para remover uma view.
+
+As views são úteis para simplificar consultas e melhorar a organização dos dados.
+
+------------------------------------------------------
+
+## STORED PROCEDURES
+
+As **stored procedures** são um recurso essencial no **SQL Server** e em outros sistemas de gerenciamento de banco de dados. Elas permitem agrupar um ou mais comandos SQL em uma unidade lógica, que pode ser reutilizada e executada como uma única entidade. Vamos explorar os conceitos básicos:
+
+1. **O que é uma Stored Procedure?**
+   - Uma **stored procedure** é um conjunto de comandos SQL pré-compilados que podem ser armazenados no banco de dados.
+   - Elas são usadas para encapsular lógica de negócios, operações repetitivas ou tarefas complexas.
+   - As stored procedures podem aceitar parâmetros de entrada e retornar resultados.
+
+2. **Benefícios das Stored Procedures:**
+   - **Facilidade de Modificação:** Você pode alterar o código dentro da stored procedure sem reiniciar ou redeployar a aplicação.
+   - **Redução de Tráfego de Rede:** Apenas o nome da stored procedure é transmitido pela rede, em vez de todo o código SQL.
+   - **Reutilização:** As stored procedures podem ser executadas por vários usuários ou aplicativos sem reescrever o código.
+   - **Segurança:** Elas reduzem a ameaça, pois evitam o acesso direto às tabelas.
+   - **Desempenho:** A execução de uma stored procedure cria um plano de execução que pode ser reutilizado.
+
+3. **Exemplo de Criação de Stored Procedure:**
+   - Vamos criar uma stored procedure simples que junta duas tabelas e retorna o resultado:
+     ```sql
+     CREATE PROCEDURE ObterDescricaoProduto AS
+     BEGIN
+         SELECT P.ProductID, P.ProductName, PD.ProductDescription
+         FROM Product P
+         INNER JOIN ProductDescription PD ON P.ProductID = PD.ProductID;
+     END;
+     ```
+   - Para executar a stored procedure, use:
+     ```sql
+     EXEC ObterDescricaoProduto;
+     ```
+
+4. **Modificação e Exclusão:**
+   - Use `ALTER PROCEDURE` para modificar uma stored procedure existente.
+   - Use `DROP PROCEDURE` para excluí-la.
+
+As stored procedures são uma ferramenta poderosa para otimizar o acesso ao banco de dados.
+
+------------------------------------------------------
+
+## VARIÁVEIS
+
+As **variáveis** são elementos essenciais no **SQL Server** e em outros sistemas de gerenciamento de banco de dados. Elas permitem armazenar e manipular valores temporários durante a execução de consultas e procedimentos. Vamos explorar os conceitos básicos:
+
+1. **O que é uma Variável?**
+   - Uma variável é um objeto que pode conter um único valor de um tipo específico.
+   - Elas são usadas para armazenar dados temporários, como contadores, valores intermediários ou parâmetros.
+
+2. **Declaração de Variáveis:**
+   - A declaração de uma variável é feita usando a palavra-chave `DECLARE`.
+   - Por exemplo, para criar uma variável chamada `@contador` do tipo inteiro com valor inicial zero:
+     ```sql
+     DECLARE @contador INT = 0;
+     ```
+
+3. **Escopo de Variáveis:**
+   - O escopo de uma variável é o intervalo de comandos SQL que pode fazer referência a ela.
+   - O escopo de uma variável dura desde o ponto em que ela é declarada até o final do lote (batch) ou procedimento em que foi declarada.
+
+4. **Exemplo Prático:**
+   - Suponha que temos uma tabela de produtos e queremos calcular o preço médio dos produtos:
+     ```sql
+     DECLARE @media_preco DECIMAL(10, 2);
+     SELECT @media_preco = AVG(preco) FROM produtos;
+     PRINT 'A média de preço dos produtos é: ' + CAST(@media_preco AS VARCHAR);
+     ```
+
+As variáveis são úteis para armazenar valores temporários e facilitar a escrita de consultas e procedimentos.
