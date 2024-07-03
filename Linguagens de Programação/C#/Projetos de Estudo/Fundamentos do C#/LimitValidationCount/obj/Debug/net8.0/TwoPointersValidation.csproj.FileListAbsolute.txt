@@ -1,0 +1,15 @@
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointersValidation\bin\Debug\net8.0\TwoPointersValidation.exe
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointersValidation\bin\Debug\net8.0\TwoPointersValidation.deps.json
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointersValidation\bin\Debug\net8.0\TwoPointersValidation.runtimeconfig.json
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointersValidation\bin\Debug\net8.0\TwoPointersValidation.dll
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointersValidation\bin\Debug\net8.0\TwoPointersValidation.pdb
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointersValidation\obj\Debug\net8.0\TwoPointersValidation.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointersValidation\obj\Debug\net8.0\TwoPointersValidation.AssemblyInfoInputs.cache
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointersValidation\obj\Debug\net8.0\TwoPointersValidation.AssemblyInfo.cs
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointersValidation\obj\Debug\net8.0\TwoPointersValidation.csproj.CoreCompileInputs.cache
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointersValidation\obj\Debug\net8.0\TwoPointersValidation.sourcelink.json
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointersValidation\obj\Debug\net8.0\TwoPointersValidation.dll
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointersValidation\obj\Debug\net8.0\refint\TwoPointersValidation.dll
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointersValidation\obj\Debug\net8.0\TwoPointersValidation.pdb
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointersValidation\obj\Debug\net8.0\TwoPointersValidation.genruntimeconfig.cache
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointersValidation\obj\Debug\net8.0\ref\TwoPointersValidation.dll

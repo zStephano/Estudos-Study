@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateHandle", "DateHandle\Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionsHandle", "ExceptionsHandle\ExceptionsHandle.csproj", "{05633FA1-2A98-4BB0-BA2B-24994EEF201F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConditionsHandlers", "ConditionsHandlers\ConditionsHandlers.csproj", "{4FA63006-F3B2-457A-AD54-0D562DA7B04C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConditionsHandlers", "ConditionsHandlers\ConditionsHandlers.csproj", "{4FA63006-F3B2-457A-AD54-0D562DA7B04C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LimitValidationCount", "LimitValidationCount\LimitValidationCount.csproj", "{D19A12F0-86C1-40FF-B51A-E3A5269FA8C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{4FA63006-F3B2-457A-AD54-0D562DA7B04C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FA63006-F3B2-457A-AD54-0D562DA7B04C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FA63006-F3B2-457A-AD54-0D562DA7B04C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D19A12F0-86C1-40FF-B51A-E3A5269FA8C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D19A12F0-86C1-40FF-B51A-E3A5269FA8C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D19A12F0-86C1-40FF-B51A-E3A5269FA8C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D19A12F0-86C1-40FF-B51A-E3A5269FA8C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

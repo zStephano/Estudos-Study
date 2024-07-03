@@ -28,3 +28,18 @@ C:\dev\Estudos\C#\Projetos de Estudo\TwoPointerAndReverse\obj\Debug\net8.0\refin
 C:\dev\Estudos\C#\Projetos de Estudo\TwoPointerAndReverse\obj\Debug\net8.0\TwoPointersAndReverse.pdb
 C:\dev\Estudos\C#\Projetos de Estudo\TwoPointerAndReverse\obj\Debug\net8.0\TwoPointersAndReverse.genruntimeconfig.cache
 C:\dev\Estudos\C#\Projetos de Estudo\TwoPointerAndReverse\obj\Debug\net8.0\ref\TwoPointersAndReverse.dll
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointerAndReverse\bin\Debug\net8.0\TwoPointersAndReverse.exe
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointerAndReverse\bin\Debug\net8.0\TwoPointersAndReverse.deps.json
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointerAndReverse\bin\Debug\net8.0\TwoPointersAndReverse.runtimeconfig.json
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointerAndReverse\bin\Debug\net8.0\TwoPointersAndReverse.dll
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointerAndReverse\bin\Debug\net8.0\TwoPointersAndReverse.pdb
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointerAndReverse\obj\Debug\net8.0\TwoPointersAndReverse.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointerAndReverse\obj\Debug\net8.0\TwoPointersAndReverse.AssemblyInfoInputs.cache
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointerAndReverse\obj\Debug\net8.0\TwoPointersAndReverse.AssemblyInfo.cs
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointerAndReverse\obj\Debug\net8.0\TwoPointersAndReverse.csproj.CoreCompileInputs.cache
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointerAndReverse\obj\Debug\net8.0\TwoPointersAndReverse.sourcelink.json
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointerAndReverse\obj\Debug\net8.0\TwoPointersAndReverse.dll
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointerAndReverse\obj\Debug\net8.0\refint\TwoPointersAndReverse.dll
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointerAndReverse\obj\Debug\net8.0\TwoPointersAndReverse.pdb
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointerAndReverse\obj\Debug\net8.0\TwoPointersAndReverse.genruntimeconfig.cache
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\TwoPointerAndReverse\obj\Debug\net8.0\ref\TwoPointersAndReverse.dll

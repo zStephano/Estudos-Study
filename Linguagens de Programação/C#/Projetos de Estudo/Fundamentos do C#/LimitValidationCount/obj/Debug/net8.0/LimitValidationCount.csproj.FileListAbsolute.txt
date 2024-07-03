@@ -1,0 +1,15 @@
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\LimitValidationCount\bin\Debug\net8.0\LimitValidationCount.exe
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\LimitValidationCount\bin\Debug\net8.0\LimitValidationCount.deps.json
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\LimitValidationCount\bin\Debug\net8.0\LimitValidationCount.runtimeconfig.json
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\LimitValidationCount\bin\Debug\net8.0\LimitValidationCount.dll
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\LimitValidationCount\bin\Debug\net8.0\LimitValidationCount.pdb
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\LimitValidationCount\obj\Debug\net8.0\LimitValidationCount.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\LimitValidationCount\obj\Debug\net8.0\LimitValidationCount.AssemblyInfoInputs.cache
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\LimitValidationCount\obj\Debug\net8.0\LimitValidationCount.AssemblyInfo.cs
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\LimitValidationCount\obj\Debug\net8.0\LimitValidationCount.csproj.CoreCompileInputs.cache
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\LimitValidationCount\obj\Debug\net8.0\LimitValidationCount.sourcelink.json
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\LimitValidationCount\obj\Debug\net8.0\LimitValidationCount.dll
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\LimitValidationCount\obj\Debug\net8.0\refint\LimitValidationCount.dll
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\LimitValidationCount\obj\Debug\net8.0\LimitValidationCount.pdb
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\LimitValidationCount\obj\Debug\net8.0\LimitValidationCount.genruntimeconfig.cache
+C:\dev\Estudos\Linguagens de Programação\C#\Projetos de Estudo\Fundamentos do C#\LimitValidationCount\obj\Debug\net8.0\ref\LimitValidationCount.dll
