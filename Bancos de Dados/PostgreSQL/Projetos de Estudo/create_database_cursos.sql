@@ -1,0 +1,13 @@
+CREATE DATABASE Cursos;
+
+CREATE TABLE Categoria (
+    Id SERIAL PRIMARY KEY,
+    Nome NVARCHAR(80) NOT NULL
+);
+
+CREATE TABLE Curso (
+    Id SERIAL PRIMARY KEY,
+    Nome NVARCHAR(80) NOT NULL,
+    CategoriaId INT NOT NULL,
+    FOREIGN KEY (CategoriaId) REFERENCES Categoria(Id)
+);

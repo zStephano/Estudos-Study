@@ -1,0 +1,29 @@
+CREATE TABLE Aluno (
+    Id INT NOT NULL,
+    Nome NVARCHAR(80) NOT NULL,
+    Email NVARCHAR(180) NOT NULL,
+    Nascimento TIMESTAMP,
+    Active BOOLEAN NOT NULL DEFAULT FALSE,
+    PRIMARY KEY (Id),
+    CONSTRAINT UQ_Aluno_Email UNIQUE (Email)
+);
+
+CREATE TABLE Curso (
+    Id SERIAL PRIMARY KEY,
+    Nome NVARCHAR(80) NOT NULL,
+    CategoriaId INT NOT NULL,
+    FOREIGN KEY (CategoriaId) REFERENCES Categoria (Id)
+);
+
+CREATE TABLE Categoria (
+    Id INT NOT NULL PRIMARY KEY,
+    Nome NVARCHAR(80) NOT NULL
+);
+
+CREATE TABLE ProgressoCurso (
+    AlunoId INT NOT NULL,
+    CursoId INT NOT NULL,
+    Progresso INT NOT NULL,
+    UltimaAtualizacao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (AlunoId, CursoId)
+);

@@ -1,0 +1,91 @@
+CREATE TABLE Student
+(
+    Id UUID NOT NULL PRIMARY KEY,
+    Name VARCHAR(120) NOT NULL,
+    Email VARCHAR(180) NOT NULL,
+    Document VARCHAR(20),
+    Phone VARCHAR(20),
+    Birthdate TIMESTAMP,
+    CreateDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE Author
+(
+    Id UUID NOT NULL PRIMARY KEY,
+    Name VARCHAR(80) NOT NULL,
+    Title VARCHAR(80) NOT NULL,
+    Image VARCHAR(1024) NOT NULL,
+    Bio VARCHAR(2000) NOT NULL,
+    Url VARCHAR(450),
+    Email VARCHAR(160) NOT NULL,
+    Type SMALLINT NOT NULL -- 0 a 255
+);
+
+CREATE TABLE Career
+(
+    Id UUID NOT NULL PRIMARY KEY,
+    Title VARCHAR(160) NOT NULL,
+    Summary VARCHAR(2000) NOT NULL,
+    Url VARCHAR(1024) NOT NULL,
+    DurationInMinutes INT NOT NULL,
+    Active BOOLEAN NOT NULL,
+    Featured BOOLEAN NOT NULL,
+    Tags VARCHAR(160) NOT NULL
+);
+
+CREATE TABLE Category
+(
+    Id UUID NOT NULL PRIMARY KEY,
+    Title VARCHAR(160) NOT NULL,
+    Url VARCHAR(1024) NOT NULL,
+    Summary VARCHAR(2000) NOT NULL,
+    "Order" INT NOT NULL,
+    Description TEXT NOT NULL,
+    Featured BOOLEAN NOT NULL
+);
+
+CREATE TABLE Course
+(
+    Id UUID NOT NULL PRIMARY KEY,
+    Tag VARCHAR(20) NOT NULL,
+    Title VARCHAR(160) NOT NULL,
+    Summary VARCHAR(2000) NOT NULL,
+    Url VARCHAR(1024) NOT NULL,
+    Level SMALLINT NOT NULL,
+    DurationInMinutes INT NOT NULL,
+    CreateDate TIMESTAMP NOT NULL,
+    LastUpdateDate TIMESTAMP NOT NULL,
+    Active BOOLEAN NOT NULL,
+    Free BOOLEAN NOT NULL,
+    Featured BOOLEAN NOT NULL,
+    AuthorId UUID NOT NULL,
+    CategoryId UUID NOT NULL,
+    Tags VARCHAR(160) NOT NULL,
+    FOREIGN KEY (AuthorId) REFERENCES Author(Id),
+    FOREIGN KEY (CategoryId) REFERENCES Category(Id)
+);
+
+CREATE TABLE CareerItem
+(
+    CareerId UUID NOT NULL,
+    CourseId UUID NOT NULL,
+    Title VARCHAR(160) NOT NULL,
+    Description TEXT NOT NULL,
+    "Order" SMALLINT NOT NULL,
+    PRIMARY KEY (CourseId, CareerId),
+    FOREIGN KEY (CareerId) REFERENCES Career(Id),
+    FOREIGN KEY (CourseId) REFERENCES Course(Id)
+);
+
+CREATE TABLE StudentCourse
+(
+    CourseId UUID NOT NULL,
+    StudentId UUID NOT NULL,
+    Progress SMALLINT NOT NULL,
+    Favorite BOOLEAN NOT NULL,
+    StartDate TIMESTAMP NOT NULL,
+    LastUpdateDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (CourseId, StudentId),
+    FOREIGN KEY (CourseId) REFERENCES Course(Id),
+    FOREIGN KEY (StudentId) REFERENCES Student(Id)
+);
