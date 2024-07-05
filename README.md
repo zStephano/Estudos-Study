@@ -28,7 +28,7 @@ Bem-vindo ao meu Repositório de Estudos! Este repositório serve como um regist
 - Entity Framework (EF Core)
 - xUnit
 
-#### 5. Diversos
+### 5. Diversos
 - Estruturas de Dados
 - Algoritmos
 - Padrões de Projeto
