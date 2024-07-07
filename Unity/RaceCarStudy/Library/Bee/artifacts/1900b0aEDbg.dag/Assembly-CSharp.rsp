@@ -388,6 +388,7 @@
 "Assets/CarsComputerScripts/CarsComputerMovementScript.cs"
 "Assets/CarsComputerScripts/GenerateCars.cs"
 "Assets/PlayerScripts/PlayerCarScript.cs"
+"Assets/PlayerScripts/SpannerPlayerScript.cs"
 -langversion:9.0
 /deterministic
 /optimize-

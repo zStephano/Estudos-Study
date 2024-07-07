@@ -1,34 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCarScript : MonoBehaviour
+public class TrocaDeFaixas : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject[] tracks;
+    private bool keyPressed = false;
 
-    // Update is called once per frame
     void Update()
     {
-        ControllersPositionX();
+        ValidateKeyPressed();
         ControllersPositionY();
-        ControllersPositionXandY();
     }
 
-    private void ControllersPositionX()
+    private void ValidateKeyPressed()
     {
-        if (Input.GetKey("right"))
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
+            keyPressed = true;
+
+        else
         {
-            transform.position += new Vector3(0.1f, 0, 0);
-        }
-        else if (Input.GetKey("left"))
-        {
-            transform.position += new Vector3(-0.1f, 0, 0);
+            if (keyPressed)
+            {
+                var direction = Input.GetKey(KeyCode.RightArrow) ? "right" : "left";
+                var newPosition = TakePosition(transform.position, direction);
+                transform.position = newPosition;
+                keyPressed = false;
+            }
         }
     }
+
     private void ControllersPositionY()
     {
         if (Input.GetKey("up"))
@@ -40,23 +39,23 @@ public class PlayerCarScript : MonoBehaviour
             transform.position += new Vector3(0, -0.1f, 0);
         }
     }
-    private void ControllersPositionXandY()
+
+    private Vector3 TakePosition(Vector3 position, string direction)
     {
-        if (Input.GetKey("right") && Input.GetKey("up"))
+        int newPosition = 0;
+        for (int i = 0; i < tracks.Length; i++)
         {
-            transform.position += new Vector3();
+            if (position.x == tracks[i].transform.position.x)
+            {
+                if (direction == "right")
+                    newPosition = i + 1;
+                else if (direction == "left")
+                    newPosition = i - 1;
+                if (newPosition >= 0 && newPosition < tracks.Length)
+                    return new Vector3(tracks[newPosition].transform.position.x, position.y, position.z);
+            }
         }
-        else if (Input.GetKey("right") && Input.GetKey("down"))
-        {
-            transform.position += new Vector3();
-        }
-        else if (Input.GetKey("left") && Input.GetKey("up"))
-        {
-            transform.position += new Vector3();
-        }
-        else if (Input.GetKey("left") && Input.GetKey("down"))
-        {
-            transform.position += new Vector3();
-        }
+
+        return position;
     }
 }
