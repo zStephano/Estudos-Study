@@ -65,7 +65,7 @@ static void OnTimerEvent(short dias, short horas, short minutos, short segundos)
             horasOnTimer = 0;
         }
         Console.WriteLine($"Dias: {diasOnTimer}, horas: {horasOnTimer}, minutos: {minutosOnTimer}, segundos: {segundosOnTimer}");
-        //Thread.Sleep(10);
+        Thread.Sleep(10);
 
     }
     FimCronometro();

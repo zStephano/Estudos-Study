@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\Estudos\\Linguagens de Programação\\C#\\Projetos de Estudo\\Fundamentos do C#\\Methods\\Methods.csproj",
+      "projectUniqueName": "C:\\dev\\Study\\Linguagens de Programação\\C#\\Projetos de Estudo\\Fundamentos do C#\\Methods\\Methods.csproj",
       "projectName": "Methods",
-      "projectPath": "C:\\dev\\Estudos\\Linguagens de Programação\\C#\\Projetos de Estudo\\Fundamentos do C#\\Methods\\Methods.csproj",
+      "projectPath": "C:\\dev\\Study\\Linguagens de Programação\\C#\\Projetos de Estudo\\Fundamentos do C#\\Methods\\Methods.csproj",
       "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\Estudos\\Linguagens de Programação\\C#\\Projetos de Estudo\\Fundamentos do C#\\Methods\\obj\\",
+      "outputPath": "C:\\dev\\Study\\Linguagens de Programação\\C#\\Projetos de Estudo\\Fundamentos do C#\\Methods\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -67,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
