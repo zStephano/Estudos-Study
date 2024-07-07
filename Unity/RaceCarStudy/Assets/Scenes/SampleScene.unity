@@ -147,38 +147,7 @@ Transform:
   m_GameObject: {fileID: 27856276}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.55, y: -0.96, z: -10.023864}
-  m_LocalScale: {x: 0.17974123, y: 1.1061, z: 1.1061}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &60086766
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 60086767}
-  m_Layer: 0
-  m_Name: SpannerPlayer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &60086767
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60086766}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.3, y: -3.61, z: 0}
+  m_LocalPosition: {x: -1.55, y: -0.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -209,7 +178,7 @@ Transform:
   m_GameObject: {fileID: 73003024}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.3, y: -1.03, z: -10.023864}
+  m_LocalPosition: {x: -4.3, y: -1.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -459,7 +428,7 @@ Transform:
   m_GameObject: {fileID: 894849942}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.4, y: -1.072205, z: -10.023864}
+  m_LocalPosition: {x: 4.4, y: -1.072205, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -610,6 +579,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3955b4a9f0157845928664075c9fb28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tracks:
+  - {fileID: 73003024}
+  - {fileID: 27856276}
+  - {fileID: 2008261108}
+  - {fileID: 894849942}
 --- !u!212 &1316998819
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -749,11 +723,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.12, y: 2.232588}
   m_EdgeRadius: 0
---- !u!1 &1429694331 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3856993349710167742, guid: f118fa1c86ab8124abb38e185d832687, type: 3}
-  m_PrefabInstance: {fileID: 4949230939350558582}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1581514630
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,11 +767,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ead530ed34421604a9fa6c1b4b61f27a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cars:
-  - {fileID: 1429694331}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &2008261108
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,7 +792,7 @@ Transform:
   m_GameObject: {fileID: 2008261108}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.55, y: -1.072205, z: -10.023864}
+  m_LocalPosition: {x: 1.55, y: -1.072205, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -898,7 +862,6 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1220155801}
-  - {fileID: 60086767}
   - {fileID: 1316998820}
   - {fileID: 1581514631}
   - {fileID: 4949230939350558582}
