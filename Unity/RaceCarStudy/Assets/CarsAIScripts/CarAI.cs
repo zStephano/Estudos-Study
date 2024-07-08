@@ -12,8 +12,6 @@ namespace Assets.CarsAIScripts
     {
         protected KeyCode GetRandomDirection()
         {
-            // Implemente sua lógica para escolher aleatoriamente entre "left", "right" ou "straight"
-            // Exemplo: escolha uma direção aleatória
             var randomIndex = UnityEngine.Random.Range(0, 2);
             switch (randomIndex)
             {

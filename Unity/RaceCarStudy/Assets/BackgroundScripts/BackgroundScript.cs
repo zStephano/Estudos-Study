@@ -7,25 +7,23 @@ public class BackgroundScript : MonoBehaviour
     private bool hasInstantiate = false;
 
     private float speed = -0.1f;
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Instantiate transform.position with a new Vector3 with default values
+        // Instanciar transform.position com um novo Vector3 com valores padrão
         transform.position += new Vector3(0, speed, 0);
 
-        // If the Y position goes under or equal -13.13f, will destroy the object -- performance + and open possibilities to scroll replay
+        // Se a posição Y for inferior ou igual a -13.13f, destruirá o objeto -- desempenho + e abrirá possibilidades de rolagem de repetição
         if (transform.position.y <= -13.13f)
         {
             Destroy(gameObject);
         }
-        
-        // Else if, will instantiate a new object position for background as GameObject, replaying that.
+
+        // Caso contrário, irá instanciar uma nova posição de objeto para o plano de fundo como GameObject, repetindo isso.
         else if (transform.position.y <= -1f)
         {
             if (hasInstantiate == false)

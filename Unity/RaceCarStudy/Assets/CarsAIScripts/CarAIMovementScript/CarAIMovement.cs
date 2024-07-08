@@ -20,9 +20,6 @@ public class CarAIMovement : CarAI
         {
             timer = 0;
             // Lógica da IA para decidir a próxima ação (exemplo: escolha aleatoriamente entre as opções)
-            // Implemente sua própria lógica aqui
-
-            //if (direction == KeyCode.RightArrow || direction == KeyCode.LeftArrow)
             ValidateKeyPressed(direction);
             isMovingForward = !isMovingForward;
 
