@@ -2405,11 +2405,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\Estudos\\Linguagens de Programação\\C#\\Projetos de Estudo\\Acesso à dados com .NET, C#, Dapper e SQL Server\\DataAcessStudy\\DataAcessStudy.csproj",
+      "projectUniqueName": "C:\\dev\\Study\\Linguagens de Programação\\C#\\Projetos de Estudo\\Acesso à dados com .NET, C#, Dapper e SQL Server\\DataAcessStudy\\DataAcessStudy.csproj",
       "projectName": "DataAcessStudy",
-      "projectPath": "C:\\dev\\Estudos\\Linguagens de Programação\\C#\\Projetos de Estudo\\Acesso à dados com .NET, C#, Dapper e SQL Server\\DataAcessStudy\\DataAcessStudy.csproj",
+      "projectPath": "C:\\dev\\Study\\Linguagens de Programação\\C#\\Projetos de Estudo\\Acesso à dados com .NET, C#, Dapper e SQL Server\\DataAcessStudy\\DataAcessStudy.csproj",
       "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\Estudos\\Linguagens de Programação\\C#\\Projetos de Estudo\\Acesso à dados com .NET, C#, Dapper e SQL Server\\DataAcessStudy\\obj\\",
+      "outputPath": "C:\\dev\\Study\\Linguagens de Programação\\C#\\Projetos de Estudo\\Acesso à dados com .NET, C#, Dapper e SQL Server\\DataAcessStudy\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2469,7 +2469,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
