@@ -2,6 +2,7 @@
 using Dapper;
 using DataAcessStudy.Models;
 using Microsoft.Data.SqlClient;
+using System.Data;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 Console.WriteLine("Hello, World!");
@@ -122,6 +123,90 @@ static void DeleteCategory(SqlConnection connection)
 
     Console.WriteLine($"{rows} registros excluídos");
 }
+
+static void CreateManyCategory(SqlConnection connection)
+{
+    var category = new Category();
+    category.Id = Guid.NewGuid();
+    category.Title = "Amazon AWS";
+    category.Url = "amazon";
+    category.Description = "Categoria destinada a serviços do AWS";
+    category.Order = 8;
+    category.Summary = "AWS Cloud";
+    category.Featured = false;
+
+    var category2 = new Category();
+    category2.Id = Guid.NewGuid();
+    category2.Title = "Categoria Nova";
+    category2.Url = "categoria-nova";
+    category2.Description = "Categoria nova";
+    category2.Order = 9;
+    category2.Summary = "Categoria";
+    category2.Featured = true;
+
+    var insertSql = @"INSERT INTO 
+                    [Category] 
+                VALUES(
+                    @Id, 
+                    @Title, 
+                    @Url, 
+                    @Summary, 
+                    @Order, 
+                    @Description, 
+                    @Featured)";
+
+    var rows = connection.Execute(insertSql, new[]{
+                new
+                {
+                    category.Id,
+                    category.Title,
+                    category.Url,
+                    category.Summary,
+                    category.Order,
+                    category.Description,
+                    category.Featured
+                },
+                new
+                {
+                    category2.Id,
+                    category2.Title,
+                    category2.Url,
+                    category2.Summary,
+                    category2.Order,
+                    category2.Description,
+                    category2.Featured
+                }
+            });
+    Console.WriteLine($"{rows} linhas inseridas");
+}
+
+static void ExecuteProcedure(SqlConnection connection)
+{
+    var procedure = "[spDeleteStudent]";
+    var pars = new { StudentId = "6bd552ea-7187-4bae-abb6-54e8f8b9f530" };
+    var affectedRows = connection.Execute(
+        procedure,
+        pars,
+        commandType: CommandType.StoredProcedure);
+
+    Console.WriteLine($"{affectedRows} linhas afetadas");
+}
+
+static void ExecuteReadProcedure(SqlConnection connection)
+{
+    var procedure = "[spGetCoursesByCategory]";
+    var pars = new { CategoryId = "09ce0b7b-cfca-497b-92c0-3290ad9d5142" };
+    var courses = connection.Query(
+        procedure,
+        pars,
+        commandType: CommandType.StoredProcedure);
+
+    foreach (var item in courses)
+    {
+        Console.WriteLine(item.Title);
+    }
+}
+
 
 // Study connection to do a native SqlCommand
 
